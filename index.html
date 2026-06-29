@@ -226,8 +226,8 @@
                 
                 <!-- SEPARADOR VS FLOTANTE CENTRAL -->
                 <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 flex items-center justify-center select-none pointer-events-none">
-                    <span class="text-4xl sm:text-5xl font-black text-rival-light orbitron filter drop-shadow-[0_0_15px_rgba(255,59,48,0.8)] italic">VS</span>
-                </div>
+    <img id="battle-image" src="infinixvsoppo1.png" alt="Duelo" class="w-32 h-32 sm:w-28 sm:h-28 object-contain transition-all duration-500">
+</div>
 
                 <!-- TARJETA INFINIX -->
                 <div class="bg-gradient-to-br from-darkCard to-black border-2 border-infinix/30 rounded-3xl p-4 sm:p-6 relative overflow-hidden group shadow-2xl flex flex-col justify-between transition-all duration-300 hover:border-infinix/60 w-full">
@@ -739,7 +739,7 @@
         const competitorsDatabase = {
             'samsung': {
                 brandName: "Samsung",
-                mascot: "infinixvssamsung-removebg-preview_3.jpg",
+                mascot: "infinixvssamsung1.png",
                 mascotName: "SAMSUNG-ALIYE",
                 brandColor: { 
                     border: 'border-blue-600', 
@@ -874,7 +874,7 @@
             },
             'honor': {
                 brandName: "Honor",
-                mascot: "infinixvshonor-removebg-preview_3.jpg",
+                mascot: "infinixvshonor1.png",
                 mascotName: "HONOR-TIBURÓN",
                 brandColor: { 
                     border: 'border-purple-600', 
@@ -1029,7 +1029,7 @@
             },
             'motorola': {
                 brandName: "Motorola",
-                mascot: "infinixvsmotorola-removebg-preview_3.jpg",
+                mascot: "infinixvsmotorola1.png",
                 mascotName: "MOTOROLA-BAT",
                 brandColor: { 
                     border: 'border-slate-300/80', 
@@ -1204,7 +1204,7 @@
             },
             'realme': {
                 brandName: "Realme",
-                mascot: "Gemini_Generated_Image_qt3g6hqt3g6hqt3g-removebg-preview_3.jpg",
+                mascot: "infinixvsrealme1.png",
                 mascotName: "REALME-GATO",
                 brandColor: { 
                     border: 'border-yellow-500', 
@@ -1339,7 +1339,7 @@
             },
             'oppo': {
                 brandName: "OPPO",
-                mascot: "infinixvsoppo-removebg-preview_3.jpg",
+                mascot: "infinixvsoppo1.png",
                 mascotName: "OPPO-OLLIE",
                 brandColor: { 
                     border: 'border-red-600', 
@@ -1474,7 +1474,7 @@
             },
             'tecno': {
                 brandName: "Tecno",
-                mascot: "infinixvstecno-removebg-preview_3.jpg",
+                mascot: "infinixvstecno1.png",
                 mascotName: "TECNO-ROBOT",
                 brandColor: { 
                     border: 'border-sky-400', 
@@ -1778,6 +1778,12 @@
 
         // Lógica de cálculo dinámico para las ventajas y render en UI
         function updateComparison() {
+// Actualizar imagen de duelo automáticamente
+    const battleImage = document.getElementById('battle-image');
+    const brandData = competitorsDatabase[activeRivalBrand];
+    if (battleImage && brandData) {
+        battleImage.src = brandData.mascot;
+    }
             const inf = infinixDatabase[activeInfinixId];
             const brandInfo = competitorsDatabase[activeRivalBrand];
             const riv = brandInfo.models[activeRivalId];
