@@ -1877,10 +1877,18 @@
 
             // 2. Actualizar Tarjeta e Inputs Visuales Rival
             const rivCardName = document.getElementById('riv-card-name');
-            if (rivCardName) rivCardName.textContent = riv.name.toUpperCase();
-            
-            const rivCardBrand = document.getElementById('riv-card-brand');
-            if (rivCardBrand) rivCardBrand.textContent = `Marca: ${brandInfo.brandName}`;
+if (rivCardName) {
+    if (riv && riv.name) {
+        rivCardName.textContent = riv.name.toUpperCase();
+    } else {
+        console.log("¡Error! No encontré el nombre del modelo. ¿El ID es 'riv-card-name'?");
+    }
+} else {
+    console.log("¡Error! No encontré el elemento con ID 'riv-card-name' en el HTML.");
+}
+
+const rivCardBrand = document.getElementById('riv-card-brand');
+if (rivCardBrand) rivCardBrand.textContent = `Marca: ${brandInfo.brandName}`;
 
             // Actualizar el smartphone simulado Rival
             const rivRenderHz = document.getElementById('riv-render-hz');
