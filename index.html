@@ -1,0 +1,2325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinix Beast Mode - Terminal de Combate de Ventas Elite</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        infinix: {
+                            light: '#39FF14',
+                            DEFAULT: '#00D100',
+                            dark: '#008000',
+                        },
+                        rival: {
+                            light: '#FF3B30',
+                            DEFAULT: '#E0115F',
+                            dark: '#8B0000',
+                        },
+                        darkBg: '#050811',
+                        darkCard: '#0E1322',
+                        darkBorder: '#1F2943',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Great+Vibes&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #050811;
+            /* Grid militar de fondo tecnológico */
+            background-image: radial-gradient(rgba(57, 255, 20, 0.04) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .signature-font {
+            font-family: 'Great Vibes', cursive;
+        }
+        /* Scrollbar premium */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050811;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1F2943;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #39FF14;
+        }
+        /* Eliminación de estilo de selectores en móviles */
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            background-size: 16px;
+        }
+        .infinix-select {
+            background-image: url("data:image/svg+xml;utf8,<svg fill='%2339FF14' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+        }
+        .rival-select {
+            background-image: url("data:image/svg+xml;utf8,<svg fill='%23FF3B30' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+        }
+        
+        /* Animaciones */
+        @keyframes pulseGlow {
+            0%, 100% { filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.4)); }
+            50% { filter: drop-shadow(0 0 20px rgba(57, 255, 20, 0.8)); }
+        }
+        .glow-infinix {
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-gray-100 min-h-screen flex flex-col justify-between selection:bg-infinix selection:text-black">
+
+    <!-- HEADER DE LA MARCA - ESTILO CYBER TERMINAL -->
+    <header class="border-b-2 border-infinix/20 bg-darkBg/95 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-3.5 flex justify-between items-center">
+            <div class="flex items-center space-x-3.5">
+                <!-- CONTENEDOR NUEVO LOGO METALIZADO (SIN FONDO BLANCO EXTRA, YA TIENE MARCO) -->
+                <div class="flex items-center justify-center transition-transform duration-300 hover:scale-105 h-9 sm:h-10">
+                    <img src="logo infinix_4.png" alt="Infinix Logo" class="h-full object-contain filter drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]" onerror="this.style.display='none'">
+                </div>
+                <div class="h-8 w-px bg-darkBorder ml-1"></div>
+                <div>
+                    <h1 class="font-black text-xs sm:text-sm tracking-wider text-white flex items-center gap-1.5 orbitron">
+                        <span class="text-infinix text-xs px-2 py-0.5 rounded border border-infinix/30 animate-pulse bg-infinix/10">BEAST MODE</span>
+                    </h1>
+                    <p class="text-[9px] sm:text-[10px] text-gray-400 font-bold tracking-widest uppercase mt-0.5">Terminal de Combate de Ventas Elite</p>
+                </div>
+            </div>
+            
+            <!-- LOGO CIRCULAR INFINIX XCHOOL EN HEADER -->
+            <div class="flex items-center space-x-3">
+                <img src="infinix_xchool_circular.png" alt="Infinix Xchool" class="h-9 w-9 sm:h-11 sm:w-11 object-contain rounded-full shadow-[0_0_10px_rgba(57,255,20,0.3)] border border-infinix/30" onerror="this.style.display='none'">
+                <span class="hidden sm:inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-black bg-infinix/10 text-infinix border border-infinix/30 uppercase tracking-widest orbitron shadow-[0_0_8px_rgba(57,255,20,0.2)]">
+                    <span class="w-2 h-2 mr-2 rounded-full bg-infinix animate-ping"></span> ONLINE
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- PESTAÑAS PRINCIPALES DE ACCIÓN -->
+    <div class="max-w-6xl mx-auto w-full px-4 mt-6">
+        <div class="grid grid-cols-3 gap-2 p-1.5 bg-darkCard rounded-2xl border border-darkBorder shadow-2xl">
+            <button onclick="switchTab('tab-comparativa')" id="btn-tab-comparativa" class="py-3 px-2 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 flex flex-col md:flex-row items-center justify-center gap-2 bg-infinix text-black shadow-lg shadow-infinix/20">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                </svg>
+                <span>Arena Cara a Cara</span>
+            </button>
+            <button onclick="switchTab('tab-argumentos')" id="btn-tab-argumentos" class="py-3 px-2 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 flex flex-col md:flex-row items-center justify-center gap-2 text-gray-400 hover:text-white hover:bg-darkBorder/50">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                </svg>
+                <span>Mata Objeciones</span>
+            </button>
+            <button onclick="switchTab('tab-quiz')" id="btn-tab-quiz" class="py-3 px-2 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 flex flex-col md:flex-row items-center justify-center gap-2 text-gray-400 hover:text-white hover:bg-darkBorder/50">
+                <img src="infinix_xchool_circular.png" alt="Xchool" class="w-5 h-5 object-contain rounded-full" onerror="this.style.display='none'">
+                <span>Infinix Xchool</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ================= PANEL CONTROL DE SELECCIÓN TÁCTICA (CONSOLA SUPERIOR CON BRANDING Y FIRMA) ================= -->
+    <section class="max-w-6xl mx-auto w-full px-4 mt-6">
+        <div class="bg-darkCard border-2 border-infinix/40 rounded-3xl p-5 sm:p-6 shadow-[0_10px_30px_rgba(0,209,0,0.15)] relative overflow-hidden">
+            <div class="absolute -right-24 -bottom-24 w-48 h-48 bg-infinix/5 rounded-full blur-3xl select-none pointer-events-none"></div>
+            
+            <!-- ENCABEZADO DE CONSOLA CON FIRMA DE AUTORÍA REUBICADA -->
+            <div class="flex flex-col md:flex-row items-center justify-between border-b border-darkBorder pb-4 mb-4 gap-4">
+                <div class="flex items-center space-x-3 text-center md:text-left">
+                    <img src="infinix_xchool_circular.png" alt="Infinix Xchool" class="h-10 w-10 sm:h-12 sm:w-12 object-contain rounded-full border border-infinix/40 shadow-[0_0_12px_rgba(57,255,20,0.3)]" onerror="this.style.display='none'">
+                    <div>
+                        <h4 class="text-sm sm:text-md font-black text-white orbitron tracking-widest flex items-center gap-2 justify-center md:justify-start">
+                            <span class="w-2.5 h-2.5 bg-infinix rounded-full animate-ping inline-block shadow-[0_0_8px_#39FF14]"></span>
+                            CONSOLA DE DUELO INFINIX XCHOOL
+                        </h4>
+                        <p class="text-[11px] text-gray-400 mt-1">Terminal de Combate de Ventas Elite • Sincronización en Tiempo Real con la Competencia</p>
+                    </div>
+                </div>
+                <!-- Sello Oficial Jershon Trainer reubicado aquí (Como en image_d93c7f.png) -->
+                <div class="flex items-center space-x-2 bg-infinix/10 border border-infinix/20 px-4 py-1.5 rounded-full shadow-[0_0_10px_rgba(57,255,20,0.1)]">
+                    <span class="signature-font text-xl text-infinix drop-shadow-[0_0_5px_rgba(57,255,20,0.4)]">By: Jershon Trainer</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                
+                <!-- DROPDOWN 1: NUESTRA MARCA INFINIX -->
+                <div class="space-y-1.5">
+                    <label for="select-infinix" class="text-[10px] font-black text-infinix uppercase tracking-widest orbitron flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-infinix"></span> 1. Arma Infinix Activa
+                    </label>
+                    <div class="relative">
+                        <select id="select-infinix" onchange="selectInfinix(this.value)" class="infinix-select w-full bg-darkBg text-white border-2 border-infinix/40 rounded-xl px-4 py-3 text-xs sm:text-sm font-black focus:border-infinix focus:ring-1 focus:ring-infinix transition-all cursor-pointer shadow-lg">
+                            <!-- Inyectado por JS -->
+                        </select>
+                    </div>
+                </div>
+
+                <!-- DROPDOWN 2: MARCA COMPETENCIA -->
+                <div class="space-y-1.5">
+                    <label for="select-rival-brand" class="text-[10px] font-black text-rival-light uppercase tracking-widest orbitron flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-rival-light"></span> 2. Marca Enemiga
+                    </label>
+                    <div class="relative">
+                        <select id="select-rival-brand" onchange="changeRivalBrand(this.value)" class="rival-select w-full bg-darkBg text-white border-2 border-rival/40 rounded-xl px-4 py-3 text-xs sm:text-sm font-black focus:border-rival focus:ring-1 focus:ring-rival transition-all cursor-pointer shadow-lg">
+                            <option value="samsung">SAMSUNG</option>
+                            <option value="honor">HONOR</option>
+                            <option value="motorola">MOTOROLA</option>
+                            <option value="realme">REALME</option>
+                            <option value="oppo">OPPO</option>
+                            <option value="tecno">TECNO</option>
+                            <option value="xiaomi">XIAOMI / REDMI</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- DROPDOWN 3: MODELO COMPETENCIA -->
+                <div class="space-y-1.5">
+                    <label for="select-rival-model" class="text-[10px] font-black text-rival-light uppercase tracking-widest orbitron flex items-center gap-1.5">
+                        <span class="text-xs">⚡</span> 3. Referencia del Rival
+                    </label>
+                    <div class="relative">
+                        <select id="select-rival-model" onchange="selectRival(this.value)" class="rival-select w-full bg-darkBg text-white border-2 border-rival/40 rounded-xl px-4 py-3 text-xs sm:text-sm font-black focus:border-rival focus:ring-1 focus:ring-rival transition-all cursor-pointer shadow-lg">
+                            <!-- Inyectado dinámicamente por JS -->
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CONTENIDO PRINCIPAL -->
+    <main class="max-w-6xl mx-auto w-full px-4 py-4 flex-grow">
+
+        <!-- ================= PESTAÑA 1: COMPARATIVA DETALLADA ================= -->
+        <section id="tab-comparativa" class="space-y-8">
+            
+            <!-- PANEL LIMPIO SUPERIOR -->
+            <div class="flex justify-between items-center bg-darkCard/50 border border-darkBorder rounded-2xl p-4 gap-4 flex-wrap">
+                <div>
+                    <h5 class="orbitron text-xs font-black text-infinix tracking-wider">CONSOLA DE DUELO CARA A CARA</h5>
+                    <p class="text-[11px] text-gray-400 mt-0.5">Módulo de combate comercial para el piso de venta</p>
+                </div>
+            </div>
+
+            <!-- TARJETAS DE CONFRONTACIÓN VISUAL (ESTILO SMARTPHONE VECTORIAL LADO A LADO FORZADO EN CUALQUIER NAVEGADOR) -->
+            <div class="grid grid-cols-2 gap-4 sm:gap-6 items-stretch relative w-full">
+                
+                <!-- SEPARADOR VS FLOTANTE CENTRAL -->
+                <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 flex items-center justify-center select-none pointer-events-none">
+                    <span class="text-4xl sm:text-5xl font-black text-rival-light orbitron filter drop-shadow-[0_0_15px_rgba(255,59,48,0.8)] italic">VS</span>
+                </div>
+
+                <!-- TARJETA INFINIX -->
+                <div class="bg-gradient-to-br from-darkCard to-black border-2 border-infinix/30 rounded-3xl p-4 sm:p-6 relative overflow-hidden group shadow-2xl flex flex-col justify-between transition-all duration-300 hover:border-infinix/60 w-full">
+                    <div class="absolute -right-12 -top-12 w-44 h-44 bg-infinix/5 rounded-full blur-3xl select-none pointer-events-none"></div>
+                    <div class="absolute top-4 right-4 bg-infinix text-black font-black text-[9px] px-3 py-1 rounded-full orbitron tracking-wider">PODER ELITE</div>
+                    
+                    <div>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="text-2xl sm:text-3xl">🏆</span>
+                            <div>
+                                <span class="text-[9px] font-bold uppercase tracking-widest text-infinix block">Línea de Combate</span>
+                                <h3 id="inf-card-name" class="text-sm sm:text-xl md:text-2xl font-black text-white orbitron tracking-wide truncate">INFINIX HOT 70</h3>
+                            </div>
+                        </div>
+
+                        <!-- Celular Virtual CSS Infinix -->
+                        <div class="my-6 flex flex-col items-center justify-center relative">
+                            <div class="relative w-full max-w-[12rem] sm:max-w-[14rem] h-[18rem] sm:h-80 bg-gradient-to-b from-gray-900 to-black rounded-[1.8rem] sm:rounded-[2.2rem] p-2.5 sm:p-3 border-[3px] border-infinix shadow-[0_0_30px_rgba(57,255,20,0.2)] flex flex-col justify-between overflow-hidden">
+                                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center select-none pointer-events-none opacity-[0.03]">
+                                    <span class="text-6xl sm:text-7xl font-black text-infinix orbitron">INF</span>
+                                </div>
+                                <!-- Cámara frontal punch-hole -->
+                                <div class="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 bg-black rounded-full mx-auto z-10 border border-gray-800"></div>
+                                
+                                <!-- Contenido de pantalla dinámica -->
+                                <div class="flex-grow flex flex-col justify-center items-center text-center p-1 sm:p-2 z-10">
+                                    <span id="inf-render-hz" class="text-infinix text-xl sm:text-3xl font-black orbitron drop-shadow-[0_0_10px_rgba(57,255,20,0.4)]">120 Hz</span>
+                                    <span id="inf-render-screentype" class="text-[8px] sm:text-[9px] uppercase tracking-wider text-gray-400 font-extrabold mt-0.5">IPS LCD</span>
+                                    <span id="inf-render-cpu" class="text-[9px] sm:text-[10px] font-semibold text-white mt-3 sm:mt-4 border-t border-darkBorder pt-2 w-full truncate">Helio G100</span>
+                                    <span id="inf-render-bat" class="text-[9px] sm:text-[10px] font-bold text-infinix mt-1">5600 mAh / 45W</span>
+                                    <div class="mt-3 sm:mt-4 flex items-center gap-1 bg-infinix/20 border border-infinix/40 px-2.5 py-0.5 rounded-full">
+                                        <span id="inf-render-badge" class="text-[6px] sm:text-[7px] font-black text-infinix tracking-wider uppercase">SGS MILITARY</span>
+                                    </div>
+                                </div>
+                                <div class="h-1 w-10 sm:w-12 bg-gray-800 rounded-full mx-auto"></div>
+                            </div>
+                            <span id="inf-card-color" class="mt-4 text-xs text-infinix font-mono bg-infinix/10 px-3 py-1 rounded-full border border-infinix/20">Color: Thermo Orange</span>
+                        </div>
+
+                        <ul id="inf-card-bullets" class="space-y-3 text-xs sm:text-sm my-4">
+                            <!-- Inyectado por JS -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- TARJETA COMPETIDOR (PERMANENTEMENTE LADO A LADO) -->
+                <div id="rival-brand-card" class="bg-gradient-to-br from-darkCard to-black border-2 border-rival/30 rounded-3xl p-4 sm:p-6 relative overflow-hidden group shadow-2xl flex flex-col justify-between transition-all duration-300 w-full">
+                    <div class="absolute -right-12 -top-12 w-44 h-44 bg-rival/5 rounded-full blur-3xl select-none pointer-events-none"></div>
+                    <div class="absolute top-4 right-4 bg-rival text-white font-black text-[9px] px-3 py-1 rounded-full orbitron tracking-wider" id="rival-badge-text">COMPETENCIA</div>
+                    
+                    <div>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="text-2xl sm:text-3xl">⚔️</span>
+                            <div>
+                                <span class="text-[9px] font-bold uppercase tracking-widest text-rival block" id="rival-brand-label">Rival Analizado</span>
+                                <h3 id="riv-card-name" class="text-sm sm:text-xl md:text-2xl font-black text-gray-200 orbitron tracking-wide truncate">SAMSUNG A07</h3>
+                            </div>
+                        </div>
+
+                        <!-- Celular Virtual CSS Rival (Mismo tamaño exacto que el de Infinix) -->
+                        <div class="my-6 flex flex-col items-center justify-center relative">
+                            <div id="rival-phone-frame" class="relative w-full max-w-[12rem] sm:max-w-[14rem] h-[18rem] sm:h-80 bg-gradient-to-b from-gray-950 to-black rounded-[1.8rem] sm:rounded-[2.2rem] p-2.5 sm:p-3 border-[3px] flex flex-col justify-between overflow-hidden transition-all duration-300">
+                                <!-- Notch Gota para el rival -->
+                                <div class="w-6 h-3.5 bg-black rounded-b-xl mx-auto z-10"></div>
+                                
+                                <!-- Contenido de pantalla dinámica -->
+                                <div class="flex-grow flex flex-col justify-center items-center text-center p-1 sm:p-2 z-10">
+                                    <span id="riv-render-hz" class="text-rival text-xl sm:text-3xl font-black orbitron transition-colors duration-300">90 Hz</span>
+                                    <span id="riv-render-screentype" class="text-[8px] sm:text-[9px] uppercase tracking-wider text-gray-500 font-extrabold mt-0.5 font-mono">PLS LCD</span>
+                                    <span id="riv-render-cpu" class="text-[9px] sm:text-[10px] font-semibold text-gray-400 mt-3 sm:mt-4 border-t border-darkBorder pt-2 w-full truncate">Helio G99</span>
+                                    <span id="riv-render-bat" class="text-[9px] sm:text-[10px] font-bold text-rival-light mt-1 transition-colors duration-300">5000 mAh / 25W</span>
+                                    <div class="mt-3 sm:mt-4 flex items-center gap-1 bg-gray-800 border border-gray-700 px-2 py-0.5 rounded-full">
+                                        <span id="riv-render-badge" class="text-[6px] sm:text-[7px] font-black text-gray-400 tracking-wider uppercase">ESTÁNDAR</span>
+                                    </div>
+                                </div>
+                                <div class="h-1 w-10 sm:w-12 bg-gray-900 rounded-full mx-auto"></div>
+                            </div>
+                            <span id="riv-card-brand" class="mt-4 text-xs text-rival font-mono bg-rival/10 px-3 py-1 rounded-full border border-rival/20">Marca: Samsung</span>
+                        </div>
+
+                        <ul id="riv-card-bullets" class="space-y-3 text-xs sm:text-sm my-4 text-gray-400">
+                            <!-- Inyectado por JS -->
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- TABLA COMPARATIVA DIRECTA -->
+            <div class="bg-darkCard rounded-3xl border border-darkBorder overflow-hidden shadow-2xl">
+                <div class="p-6 border-b border-darkBorder bg-darkCard/50 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                        <h4 class="text-lg font-bold text-white flex items-center gap-2">
+                            <span class="w-2.5 h-2.5 bg-infinix rounded-full animate-pulse"></span>
+                            Ficha Técnica Comparativa Autocalculada
+                        </h4>
+                        <p class="text-xs text-gray-400">Toda la información técnica calibrada en tiempo real.</p>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-black/40 text-xs font-bold uppercase tracking-wider text-gray-300 border-b border-darkBorder">
+                                <th class="p-4 pl-6">Especificación</th>
+                                <th id="table-inf-header" class="p-4 bg-infinix/5 text-infinix font-black">INFINIX MODELO</th>
+                                <th id="table-riv-header" class="p-4 bg-rival/5 text-rival font-black">RIVAL SELECCIONADO</th>
+                                <th class="p-4 text-center">Ventaja Competitiva</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-darkBorder text-xs sm:text-sm">
+                            
+                            <!-- PANTALLA -->
+                            <tr class="hover:bg-darkBorder/20 transition-all">
+                                <td class="p-4 pl-6">
+                                    <div class="font-bold text-white">Pantalla y Hz</div>
+                                    <div class="text-[10px] text-gray-400">Fluidez visual</div>
+                                </td>
+                                <td id="tbl-inf-screen" class="p-4 bg-infinix/5 font-semibold text-white">
+                                    <!-- Dinámico -->
+                                </td>
+                                <td id="tbl-riv-screen" class="p-4 bg-rival/5 text-gray-300">
+                                    <!-- Dinámico -->
+                                </td>
+                                <td id="tbl-adv-screen" class="p-4 text-center">
+                                    <!-- Dinámico -->
+                                </td>
+                            </tr>
+
+                            <!-- PROCESADOR -->
+                            <tr class="hover:bg-darkBorder/20 transition-all">
+                                <td class="p-4 pl-6">
+                                    <div class="font-bold text-white">Procesador</div>
+                                    <div class="text-[10px] text-gray-400">Rendimiento de Chipset</div>
+                                </td>
+                                <td id="tbl-inf-cpu" class="p-4 bg-infinix/5 font-semibold text-white">
+                                    <!-- Dinámico -->
+                                </td>
+                                <td id="tbl-riv-cpu" class="p-4 bg-rival/5 text-gray-300">
+                                    <!-- Dinámico -->
+                                </td>
+                                <td id="tbl-adv-cpu" class="p-4 text-center">
+                                    <!-- Dinámico -->
+                                </td>
+                            </tr>
+
+                            <!-- MEMORIA Y RAM -->
+                            <tr class="hover:bg-darkBorder/20 transition-all">
+                                <td class="p-4 pl-6">
+                                    <div class="font-bold text-white">RAM y ROM</div>
+                                    <div class="text-[10px] text-gray-400">Almacenamiento y Multitarea</div>
+                                </td>
+                                <td id="tbl-inf-mem" class="p-4 bg-infinix/5 font-semibold text-white">
+                                    <!-- Dinámico -->
+                                </td>
+                                <td id="tbl-riv-mem" class="p-4 bg-rival/5 text-gray-300">
+                                    <!-- Dinámico -->
+                                </td>
+                                <td id="tbl-adv-mem" class="p-4 text-center font-bold text-infinix">
+                                    <!-- Dinámico -->
+                                </td>
+                            </tr>
+
+                            <!-- BATERÍA Y CARGA -->
+                            <tr class="hover:bg-darkBorder/20 transition-all">
+                                <td class="p-4 pl-6">
+                                    <div class="font-bold text-white">Batería y Carga</div>
+                                    <div class="text-[10px] text-gray-400">Autonomía y velocidad</div>
+                                </td>
+                                <td id="tbl-inf-bat" class="p-4 bg-infinix/5 font-semibold text-white">
+                                    <!-- Dinámico -->
+                                </td>
+                                <td id="tbl-riv-bat" class="p-4 bg-rival/5 text-gray-300">
+                                    <!-- Dinámico -->
+                                </td>
+                                <td id="tbl-adv-bat" class="p-4 text-center">
+                                    <!-- Dinámico -->
+                                </td>
+                            </tr>
+
+                            <!-- RED Y CONECTIVIDAD -->
+                            <tr class="hover:bg-darkBorder/20 transition-all">
+                                <td class="p-4 pl-6">
+                                    <div class="font-bold text-white">Conectividad / Red</div>
+                                    <div class="text-[10px] text-gray-400">Soporte de bandas</div>
+                                </td>
+                                <td id="tbl-inf-red" class="p-4 bg-infinix/5 font-semibold text-white">
+                                    <!-- Dinámico -->
+                                </td>
+                                <td id="tbl-riv-red" class="p-4 bg-rival/5 text-gray-300">
+                                    <!-- Dinámico -->
+                                </td>
+                                <td id="tbl-adv-red" class="p-4 text-center text-gray-400">
+                                    <!-- Dinámico -->
+                                </td>
+                            </tr>
+
+                            <!-- RESISTENCIA Y DURABILIDAD -->
+                            <tr class="hover:bg-darkBorder/20 transition-all">
+                                <td class="p-4 pl-6">
+                                    <div class="font-bold text-white">Resistencia</div>
+                                    <div class="text-[10px] text-gray-400">Protección del equipo</div>
+                                </td>
+                                <td id="tbl-inf-dur" class="p-4 bg-infinix/5 font-semibold text-white">
+                                    <!-- Dinámico -->
+                                </td>
+                                <td id="tbl-riv-dur" class="p-4 bg-rival/5 text-gray-300">
+                                    <!-- Dinámico -->
+                                </td>
+                                <td id="tbl-adv-dur" class="p-4 text-center">
+                                    <!-- Dinámico -->
+                                </td>
+                            </tr>
+
+                            <!-- CÁMARAS -->
+                            <tr class="hover:bg-darkBorder/20 transition-all">
+                                <td class="p-4 pl-6">
+                                    <div class="font-bold text-white">Cámaras</div>
+                                    <div class="text-[10px] text-gray-400">Resolución de fotografía</div>
+                                </td>
+                                <td id="tbl-inf-cam" class="p-4 bg-infinix/5 font-semibold text-white">
+                                    <!-- Dinámico -->
+                                </td>
+                                <td id="tbl-riv-cam" class="p-4 bg-rival/5 text-gray-300">
+                                    <!-- Dinámico -->
+                                </td>
+                                <td id="tbl-adv-cam" class="p-4 text-center">
+                                    <!-- Dinámico -->
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- CARD PARA COMPARTIR POR WHATSAPP ADAPTADO -->
+            <div class="bg-gradient-to-r from-green-950/40 to-black p-6 rounded-3xl border border-infinix/20 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+                <div class="flex items-center gap-4">
+                    <div class="bg-infinix/20 p-3 rounded-full border border-infinix/40">
+                        <svg class="w-8 h-8 text-infinix" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.244 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.528 1.975 14.069 1.5 12.011 1.5c-5.433 0-9.854 4.373-9.858 9.802-.001 1.761.47 3.479 1.365 5.011L2.527 20.37l4.12-1.216z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h5 class="text-white font-bold text-lg">¿Enviar este Pitch de Combate?</h5>
+                        <p id="whatsapp-card-desc" class="text-xs text-gray-400">Genera y copia automáticamente un resumen altamente persuasivo con las fortalezas exactas de tu Infinix activo para WhatsApp.</p>
+                    </div>
+                </div>
+                <button onclick="copiarPitchWhatsApp()" class="w-full md:w-auto px-6 py-3 bg-infinix hover:bg-infinix-light text-black font-extrabold rounded-xl transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-2 shadow-lg shadow-infinix/20">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m-5 4h5m-5 4h5m-9 4h9"></path></svg>
+                    Copiar Speech de WhatsApp
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- ================= PESTAÑA 2: DESTRUCTOR DE OBJECIONES (BATTLE CARDS) ================= -->
+        <section id="tab-argumentos" class="hidden space-y-6">
+            
+            <div class="text-center max-w-2xl mx-auto space-y-3">
+                <div class="flex justify-center items-center space-x-2">
+                    <img src="infinix_xchool_circular.png" alt="Infinix Xchool Logo" class="h-8 w-8 object-contain rounded-full" onerror="this.style.display='none'">
+                    <span class="text-xs font-black text-infinix uppercase tracking-widest orbitron block">MANUAL DE COMBATE TÁCTICO</span>
+                </div>
+                <h3 id="obj-section-title" class="text-3xl font-black text-white orbitron tracking-wider">Mata las Objeciones de la Competencia</h3>
+                <p class="text-sm text-gray-400">Respuestas rápidas, inteligentes y agresivas comercialmente para que cierres la venta cuando el cliente ponga trabas.</p>
+            </div>
+
+            <!-- Listado Dinámico de Objeciones -->
+            <div id="objections-list-container" class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <!-- Inyectado dinámicamente por JS -->
+            </div>
+        </section>
+
+
+        <!-- ================= PESTAÑA 3: INFINIX XCHOOL - ACADEMIA DE ENTRENAMIENTO ================= -->
+        <section id="tab-quiz" class="hidden space-y-6">
+            
+            <div class="text-center max-w-2xl mx-auto space-y-4">
+                <div class="flex justify-center items-center space-x-3">
+                    <img src="infinix_xchool_circular.png" alt="Infinix Xchool Circular" class="h-16 w-16 object-contain rounded-full border-2 border-infinix shadow-[0_0_15px_rgba(57,255,20,0.4)] animate-pulse" onerror="this.style.display='none'">
+                    <div>
+                        <span class="text-xs font-black text-infinix uppercase tracking-widest orbitron block">ACADEMIA DE ENTRENAMIENTO</span>
+                        <h3 class="text-3xl font-black text-white tracking-wider orbitron">INFINIX XCHOOL</h3>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-400 max-w-xl mx-auto">Pon a prueba tu agilidad para el piso de venta. Responde correctamente las preguntas clave sobre los productos Infinix y el ecosistema móvil.</p>
+            </div>
+
+            <div class="max-w-xl mx-auto mt-8 bg-darkCard border-2 border-infinix/40 rounded-3xl p-6 shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-24 -top-24 w-48 h-48 bg-infinix/5 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <!-- Pantalla del Quiz -->
+                <div id="quiz-container" class="relative z-10">
+                    <div class="flex justify-between items-center mb-6 text-xs text-gray-400 font-bold uppercase tracking-wider">
+                        <span id="quiz-progress" class="bg-darkBg px-3 py-1 rounded-full border border-darkBorder text-infinix">Pregunta 1 de 4</span>
+                        <span id="quiz-score" class="bg-infinix/10 text-infinix px-3 py-1 rounded-full border border-infinix/30 font-bold orbitron">Puntaje: 0</span>
+                    </div>
+
+                    <!-- Pregunta -->
+                    <h4 id="quiz-question" class="text-lg font-extrabold text-white mb-6 leading-snug border-b border-darkBorder pb-4">
+                        ¿Cuál es la tasa de refresco que le da una ventaja de fluidez total al Infinix HOT 70?
+                    </h4>
+
+                    <!-- Opciones de respuesta -->
+                    <div class="space-y-3" id="quiz-options">
+                        <!-- Generado por JS -->
+                    </div>
+
+                    <!-- Mensaje de Feedback -->
+                    <div id="quiz-feedback" class="hidden mt-6 p-4 rounded-xl text-sm font-medium"></div>
+
+                    <!-- Botón Siguiente -->
+                    <button id="quiz-next-btn" onclick="nextQuestion()" class="hidden mt-6 w-full py-3.5 bg-infinix text-black font-black rounded-xl transition-all active:scale-95 text-center uppercase tracking-widest orbitron shadow-lg shadow-infinix/20">
+                        Siguiente Pregunta
+                    </button>
+                </div>
+
+                <!-- Pantalla de Resultados Finales -->
+                <div id="quiz-results" class="hidden text-center py-6 space-y-6 relative z-10">
+                    <!-- GIF INTERACTIVO OFICIAL XCLUB -->
+                    <div class="flex justify-center mb-2">
+                        <img src="xclub-infinix.gif" alt="Xclub Animación" class="h-28 w-28 object-contain rounded-2xl border-2 border-infinix shadow-[0_0_20px_rgba(57,255,20,0.3)] bg-black/60 p-1" onerror="this.style.display='none'">
+                    </div>
+                    
+                    <h4 class="text-2xl font-black text-white orbitron tracking-wider">¡Entrenamiento Completado!</h4>
+                    <p id="quiz-final-score-text" class="text-lg text-gray-300 font-semibold">Has obtenido 4 de 4 respuestas correctas.</p>
+                    <p class="text-xs text-gray-400 px-6 max-w-sm mx-auto">¡Excelente trabajo! Has validado tu conocimiento táctico oficial y estás listo para adueñarte del mostrador en Éxito, Alkomprar y todas las tiendas.</p>
+                    
+                    <button onclick="resetQuiz()" class="px-8 py-3.5 bg-infinix text-black font-extrabold rounded-xl hover:bg-infinix-light transition-all active:scale-95 inline-block text-xs uppercase tracking-widest orbitron shadow-lg shadow-infinix/20">
+                        Volver a Intentar
+                    </button>
+                </div>
+
+                <!-- FIRMA OFICIAL DE MARCA AL PIE DE LA CARD -->
+                <div class="mt-8 pt-4 border-t border-darkBorder flex items-center justify-between text-xs text-gray-500 relative z-10">
+                    <span class="font-mono tracking-wider text-[10px] text-infinix/50">PLATAFORMA EVALUADORA OFICIAL</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- BANNER DE CIERRE CON CONSEJOS CLAVE -->
+    <footer class="bg-black/80 border-t-2 border-darkBorder py-6">
+        <div class="max-w-6xl mx-auto px-4 text-center space-y-3">
+            <div class="flex justify-center items-center gap-6 flex-wrap text-xs text-gray-400 font-semibold uppercase">
+                <span class="flex items-center gap-1.5"><span class="w-2 h-2 bg-infinix rounded-full"></span> 120Hz/144Hz Fluidos</span>
+                <span class="flex items-center gap-1.5"><span class="w-2 h-2 bg-infinix rounded-full"></span> SGS Resistencia Militar</span>
+                <span class="flex items-center gap-1.5"><span class="w-2 h-2 bg-infinix rounded-full"></span> Carga Ultrarrápida</span>
+            </div>
+            <!-- SELLO OFICIAL DE PIE DE PÁGINA CON LOGO -->
+            <div class="flex items-center justify-center space-x-2 pt-2">
+                <img src="infinix_xchool_circular.png" alt="X" class="h-6 w-6 object-contain rounded-full opacity-60">
+                <p class="text-xs text-gray-500">© 2026 Infinix Mobile • Academia Infinix Xchool • Jershon Trainer</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ALERT DIALOG PERSONALIZADO PARA REEMPLAZAR ALERT() -->
+    <div id="custom-alert" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-darkCard border-2 border-infinix rounded-2xl max-w-sm w-full p-6 text-center space-y-4 shadow-2xl">
+            <div class="mx-auto w-12 h-12 bg-infinix/20 rounded-full flex items-center justify-center border border-infinix/40">
+                <svg class="w-6 h-6 text-infinix" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <h5 class="text-white font-bold text-lg" id="alert-title">¡Éxito!</h5>
+            <p class="text-gray-300 text-sm" id="alert-message">El contenido ha sido copiado correctamente al portapapeles.</p>
+            <button onclick="closeCustomAlert()" class="w-full py-2.5 bg-infinix hover:bg-infinix-light text-black font-extrabold rounded-xl transition-all">
+                Aceptar
+            </button>
+        </div>
+    </div>
+
+    <!-- SCRIPT DE INTERACCIÓN Y BASE DE DATOS COMPLETA -->
+    <script>
+        // BASE DE DATOS DE INFINIX CORREGIDA EXACTAMENTE CON TU ÚLTIMA LISTA
+        const infinixDatabase = {
+            'smart-20': {
+                name: "Infinix Smart 20",
+                emoji: "📱",
+                screen: "6.6\" IPS LCD (120 Hz)", 
+                screentype: "IPS LCD",
+                hz: 120,
+                processor: "Helio G81",
+                ram: "4 GB",
+                storage: "128 GB",
+                battery: "5200 mAh",
+                charge: "15W",
+                durability: "Protección IP53 contra salpicaduras",
+                camera: "Trasera: 8 Mpx / Frontal: 8 Mpx",
+                color: "Negro Cristal",
+                red: "4G",
+                highlights: [
+                    "✔ Tasa de refresco ultra fluida de 120Hz en gama Smart.",
+                    "✔ Batería masiva de 5200 mAh superior al estándar tradicional.",
+                    "✔ Procesamiento optimizado con Chipset Helio G81 de gran rendimiento diario."
+                ]
+            },
+            'hot-70': {
+                name: "Infinix HOT 70",
+                emoji: "👑",
+                screen: "6.78\" IPS LCD HD+ (120 Hz)",
+                screentype: "IPS LCD",
+                hz: 120,
+                processor: "Helio G100 Ultimate",
+                ram: "4 GB",
+                storage: "256 GB",
+                battery: "5600 mAh",
+                charge: "45 W",
+                durability: "IP54/IP65 - SGS Militar 5★ (Blindado Oficial)",
+                camera: "Trasera: 50 Mpx / Frontal: 8 Mpx",
+                color: "Thermo Orange (Cambia al tacto)",
+                red: "4G",
+                highlights: [
+                    "✔ Único modelo certificado con SGS Grado Militar 5 Estrellas contra impactos extremos.",
+                    "✔ Innovador color Thermo Orange que cambia dinámicamente con la temperatura corporal.",
+                    "✔ Increíble carga súper rápida de 45 W con batería de 5600 mAh."
+                ]
+            },
+            'hot-60-pro': {
+                name: "Infinix Hot 60 Pro+",
+                emoji: "⚡",
+                screen: "6.78\" IPS LCD (120 Hz)", 
+                screentype: "IPS LCD",
+                hz: 120,
+                processor: "Helio G200 Ultimate",
+                ram: "8 GB",
+                storage: "256 GB",
+                battery: "5160 mAh",
+                charge: "45 W",
+                durability: "Protección contra salpicaduras avanzada",
+                camera: "Trasera: 50 Mpx / Frontal: 13 Mpx",
+                color: "Azul Eléctrico",
+                red: "4G",
+                highlights: [
+                    "✔ Brutal procesador Helio G200 Ultimate optimizado para gaming y renderizado.",
+                    "✔ Generosa memoria RAM física de 8 GB para una multitarea sin cierres.",
+                    "✔ Potente cámara frontal de 13 Mpx para selfies de alta definición."
+                ]
+            },
+            'note-edge': {
+                name: "Infinix Note Edge",
+                emoji: "📱",
+                screen: "6.78\" AMOLED Cuva (120 Hz)",
+                screentype: "AMOLED Curva",
+                hz: 120,
+                processor: "Dimensity 7100",
+                ram: "8 GB",
+                storage: "256 GB",
+                battery: "6150 mAh",
+                charge: "45 W",
+                durability: "IP64 protección de grado avanzado",
+                camera: "Trasera: 50 Mpx / Frontal: 13 Mpx",
+                color: "Verde Esmeralda",
+                red: "5G",
+                highlights: [
+                    "✔ Elegante pantalla curva AMOLED premium con colores cinemáticos de alta inmersión.",
+                    "✔ Titán de energía: 6150 mAh con soporte de red ultra veloz 5G.",
+                    "✔ Cámara de alta fidelidad de 50 Mpx combinada con selfie de 13 Mpx."
+                ]
+            },
+            'note-60': {
+                name: "Infinix Note 60",
+                emoji: "🛡️",
+                screen: "6.78\" AMOLED (120 Hz)",
+                screentype: "AMOLED",
+                hz: 120,
+                processor: "Dimensity 7400",
+                ram: "8 GB",
+                storage: "256 GB",
+                battery: "6150 mAh",
+                charge: "45W",
+                durability: "IP64 protección de alta resistencia",
+                camera: "Trasera: 50 Mpx / Frontal: 13 Mpx",
+                color: "Gris Titanio",
+                red: "5G",
+                highlights: [
+                    "✔ Potente procesador Dimensity 7400 para velocidad extrema bajo redes 5G.",
+                    "✔ Enorme batería de 6150 mAh con tecnología de carga optimizada de 45W.",
+                    "✔ Pantalla AMOLED brillante y vibrante para consumo multimedia."
+                ]
+            },
+            'note-60-pro': {
+                name: "Infinix Note 60 PRO",
+                emoji: "🔥",
+                screen: "6.78\" AMOLED (120 Hz)", 
+                screentype: "AMOLED Premium",
+                hz: 120,
+                processor: "Snapdragon 7s Gen 4",
+                ram: "8 GB",
+                storage: "256 GB",
+                battery: "6000 mAh",
+                charge: "90W",
+                durability: "Protección IP64 avanzada",
+                camera: "Trasera: 50 Mpx / Frontal: 13 Mpx",
+                color: "Plata Estelar",
+                red: "5G",
+                highlights: [
+                    "✔ Carga súper sónica de 90W: 0 a 100% en tiempo récord.",
+                    "✔ Chipset insignia Snapdragon 7s Gen 4 de alta eficiencia energética.",
+                    "✔ Batería titánica de 6000 mAh que redefine la duración extrema en 5G."
+                ]
+            }
+        };
+
+        // BASE DE DATOS DE COMPETIDORES CORREGIDA EXACTAMENTE CON TU ÚLTIMA LISTA
+        const competitorsDatabase = {
+            'samsung': {
+                brandName: "Samsung",
+                mascot: "infinixvssamsung-removebg-preview_3.jpg",
+                mascotName: "SAMSUNG-ALIYE",
+                brandColor: { 
+                    border: 'border-blue-600', 
+                    text: 'text-blue-500', 
+                    glow: 'shadow-[0_0_30px_rgba(37,99,235,0.3)]', 
+                    bg: 'bg-blue-600/20', 
+                    rawColor: '#2563eb',
+                    badgeClass: 'bg-blue-600/20 text-blue-400 border border-blue-500/30'
+                },
+                models: {
+                    'a07': {
+                        name: "Samsung A07",
+                        emoji: "📱",
+                        screen: "6.7\" PLS LCD (90 Hz)",
+                        screentype: "PLS LCD",
+                        hz: 90,
+                        processor: "Helio G99",
+                        ram: "4/6 GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 8 Mpx",
+                        charge: "25W",
+                        battery: "5000 mAh",
+                        red: "4G",
+                        durability: "Plástico con empaque estándar",
+                        highlights: [
+                            "✘ Pantalla PLS LCD estándar de solo 90Hz.",
+                            "✘ Velocidad de carga limitada a 25W.",
+                            "✘ Chasis básico de plástico propenso a fisuras por caídas."
+                        ]
+                    },
+                    'a17': {
+                        name: "Samsung A17",
+                        emoji: "📱",
+                        screen: "6.7\" PLS LCD (90 Hz)",
+                        screentype: "PLS LCD",
+                        hz: 90,
+                        processor: "Dimensity 6300",
+                        ram: "4/8 GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 13 Mpx",
+                        charge: "25W",
+                        battery: "5000 mAh",
+                        red: "4G/5G",
+                        durability: "Policarbonato estándar",
+                        highlights: [
+                            "✘ Pantalla de 90Hz frente a la suavidad de 120Hz de Infinix.",
+                            "✘ Carga convencional de 25W conectada al enchufe mucho más tiempo.",
+                            "✘ Estructura plástica vulnerable a golpes cotidianos."
+                        ]
+                    },
+                    'a27': {
+                        name: "Samsung A27",
+                        emoji: "📱",
+                        screen: "6.6\" Super AMOLED (120 Hz)",
+                        screentype: "Super AMOLED",
+                        hz: 120,
+                        processor: "Exynos 1330",
+                        ram: "6/8 GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 12 Mpx",
+                        charge: "25W",
+                        battery: "5000 mAh",
+                        red: "4G/5G",
+                        durability: "Protección intermedia estándar",
+                        highlights: [
+                            "✘ Procesador Exynos con tendencia al sobrecalentamiento bajo uso rudo.",
+                            "✘ Batería de solo 5000 mAh y carga anticuada de 25W.",
+                            "✘ Sin blindaje contra caídas certificada."
+                        ]
+                    },
+                    'a37': {
+                        name: "Samsung A37",
+                        emoji: "📱",
+                        screen: "6.6\" Super AMOLED (120 Hz)",
+                        screentype: "Super AMOLED",
+                        hz: 120,
+                        processor: "Exynos 1480",
+                        ram: "6/8 GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 12 Mpx",
+                        charge: "45W",
+                        battery: "5000 mAh",
+                        red: "5G",
+                        durability: "Plástico clásico",
+                        highlights: [
+                            "✘ Diagonal de pantalla inferior de 6.6 pulgadas.",
+                            "✘ Batería reducida de 5000 mAh frente a la autonomía Infinix.",
+                            "✘ Sin certificaciones de durabilidad contra impactos de alto impacto."
+                        ]
+                    },
+                    'a57': {
+                        name: "Samsung A57",
+                        emoji: "📱",
+                        screen: "6.6\" Super AMOLED (120 Hz)",
+                        screentype: "Super AMOLED",
+                        hz: 120,
+                        processor: "Exynos 1880",
+                        ram: "8 GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 12 Mpx",
+                        charge: "45W",
+                        battery: "5000 mAh",
+                        red: "5G",
+                        durability: "Sellado regular IP54",
+                        highlights: [
+                            "✘ Chip Exynos de rendimiento inestable en cargas de juego prolongadas.",
+                            "✘ Batería ajustada de 5000 mAh que exige recargas frecuentes.",
+                            "✘ Coste de marca elevado sin accesorios completos en su caja."
+                        ]
+                    },
+                    's25fe': {
+                        name: "Samsung S25 FE",
+                        emoji: "✨",
+                        screen: "6.7\" Dynamic AMOLED 2X (120 Hz)",
+                        screentype: "Dynamic AMOLED",
+                        hz: 120,
+                        processor: "Exynos 2400",
+                        ram: "8/12 GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 10 Mpx",
+                        charge: "25W",
+                        battery: "4500 mAh",
+                        red: "5G",
+                        durability: "IP68 convencional",
+                        highlights: [
+                            "✘ Batería sumamente pequeña de apenas 4500 mAh.",
+                            "✘ Carga obsoleta de 25W para su elevado rango de costo.",
+                            "✘ No cuenta con la durabilidad de caídas certificada por SGS."
+                        ]
+                    }
+                }
+            },
+            'honor': {
+                brandName: "Honor",
+                mascot: "infinixvshonor-removebg-preview_3.jpg",
+                mascotName: "HONOR-TIBURÓN",
+                brandColor: { 
+                    border: 'border-purple-600', 
+                    text: 'text-purple-400', 
+                    glow: 'shadow-[0_0_30px_rgba(147,51,234,0.3)]', 
+                    bg: 'bg-purple-600/20', 
+                    rawColor: '#9333ea',
+                    badgeClass: 'bg-purple-600/20 text-purple-400 border border-purple-500/30'
+                },
+                models: {
+                    'x5c': {
+                        name: "Honor X5C",
+                        emoji: "📱",
+                        screen: "6.56\" IPS LCD (90 Hz)",
+                        screentype: "IPS LCD",
+                        hz: 90,
+                        processor: "Helio G81",
+                        ram: "4 GB",
+                        storage: "128 / 256 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 5 Mpx",
+                        charge: "15W",
+                        battery: "5260 mAh",
+                        red: "4G",
+                        durability: "Plástico convencional",
+                        highlights: [
+                            "✘ Monitor lento de 90Hz con resolución de entrada.",
+                            "✘ Velocidad de carga lenta de tan solo 15W.",
+                            "✘ Sensor de selfie de resolución muy recortada (5 Mpx)."
+                        ]
+                    },
+                    'x7d': {
+                        name: "Honor X7D",
+                        emoji: "📱",
+                        screen: "6.7\" IPS LCD (90 Hz)",
+                        screentype: "IPS LCD",
+                        hz: 90,
+                        processor: "Snapdragon 685",
+                        ram: "6 / 8 GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 108 Mpx / Frontal: 8 Mpx",
+                        charge: "35W",
+                        battery: "6500 mAh",
+                        red: "4G",
+                        durability: "Policarbonato estándar",
+                        highlights: [
+                            "✘ Tasa de actualización estándar de 90Hz sin fluidez extrema.",
+                            "✘ Snapdragon 685 de rendimiento gráfico modesto en juegos 3D.",
+                            "✘ Sin empaques protectores ni certificaciones contra caídas."
+                        ]
+                    },
+                    'x8d': {
+                        name: "Honor X8D",
+                        emoji: "📱",
+                        screen: "6.7\" IPS LCD (120 Hz)",
+                        screentype: "IPS LCD",
+                        hz: 120,
+                        processor: "Snapdragon 6s Gen 2",
+                        ram: "8 GB",
+                        storage: "256/512 GB",
+                        camera: "Trasera: 108 Mpx / Frontal: 16 Mpx",
+                        charge: "45W",
+                        battery: "7000 mAh",
+                        red: "4G",
+                        durability: "Carcasa plástica estándar",
+                        highlights: [
+                            "✘ Chip Snapdragon 6s Gen 2 con tendencia a ralentizarse en juegos pesados.",
+                            "✘ Dispositivo grueso e incómodo en la mano debido a su gran grosor.",
+                            "✘ Chasis estándar que se raya y abolla con caídas cotidianas."
+                        ]
+                    },
+                    '400-smart': {
+                        name: "Honor 400 Smart",
+                        emoji: "📱",
+                        screen: "6.7\" TFT LCD (90 Hz)",
+                        screentype: "TFT LCD",
+                        hz: 90,
+                        processor: "Snapdragon 6s Gen 3",
+                        ram: "6 GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 5 Mpx",
+                        charge: "35W",
+                        battery: "6500 mAh",
+                        red: "4G",
+                        durability: "Policarbonato estándar",
+                        highlights: [
+                            "✘ Pantalla TFT LCD con inferiores ángulos de visión que IPS o AMOLED.",
+                            "✘ Memoria RAM física de 6 GB fija sin optimización dinámica.",
+                            "✘ Cámara selfie limitada a 5 Mpx para videollamadas."
+                        ]
+                    },
+                    'magic-7-lite': {
+                        name: "Honor Magic 7 Lite",
+                        emoji: "✨",
+                        screen: "6.78\" AMOLED (120 Hz)",
+                        screentype: "AMOLED",
+                        hz: 120,
+                        processor: "Snapdragon 6 Gen 1",
+                        ram: "8 GB",
+                        storage: "256/512 GB",
+                        camera: "Trasera: 108 Mpx / Frontal: 16 Mpx",
+                        charge: "66W",
+                        battery: "6600 mAh",
+                        red: "5G",
+                        durability: "Estructura convencional de vidrio",
+                        highlights: [
+                            "✘ Chipset Snapdragon 6 Gen 1 con baja tasa de fotogramas por segundo.",
+                            "✘ Sistema de audio mono deficiente en volumen máximo.",
+                            "✘ Pantalla curva expuesta a quebraduras por impactos accidentales."
+                        ]
+                    },
+                    'magic-8-lite': {
+                        name: "Honor Magic 8 Lite",
+                        emoji: "✨",
+                        screen: "6.78\" AMOLED (120 Hz)",
+                        screentype: "AMOLED",
+                        hz: 120,
+                        processor: "Snapdragon 6 Gen 4",
+                        ram: "8/12 GB",
+                        storage: "256/512 GB",
+                        camera: "Trasera: 108 Mpx / Frontal: 16 Mpx",
+                        charge: "66 W",
+                        battery: "7500 mAh",
+                        red: "5G",
+                        durability: "Estructura convencional",
+                        highlights: [
+                            "✘ Grosor y peso incrementados en mano por su batería robusta.",
+                            "✘ Carga de 66W que tarda bastante en llenar su inmensa batería.",
+                            "✘ Sin empaques especiales ni blindajes certificados contra caídas."
+                        ]
+                    },
+                    '600': {
+                        name: "Honor 600",
+                        emoji: "✨",
+                        screen: "6.78\" AMOLED (120 Hz)",
+                        screentype: "AMOLED",
+                        hz: 120,
+                        processor: "Snapdragon 7 Gen 4",
+                        ram: "8/12 GB",
+                        storage: "256/512 GB",
+                        camera: "Trasera: 200 Mpx / Frontal: 50 Mpx",
+                        charge: "80W",
+                        battery: "7000 mAh",
+                        red: "5G",
+                        durability: "Construcción de plástico",
+                        highlights: [
+                            "✘ Dispositivo excesivamente robusto y pesado de manejar en el bolsillo.",
+                            "✘ Fotos masivas de 200 Mpx que saturan y llenan la memoria interna de inmediato.",
+                            "✘ Sin certificaciones anticaídas de grado militar real."
+                        ]
+                    }
+                }
+            },
+            'motorola': {
+                brandName: "Motorola",
+                mascot: "infinixvsmotorola-removebg-preview_3.jpg",
+                mascotName: "MOTOROLA-BAT",
+                brandColor: { 
+                    border: 'border-slate-300/80', 
+                    text: 'text-slate-200', 
+                    glow: 'shadow-[0_0_30px_rgba(255,255,255,0.15)]', 
+                    bg: 'bg-white/10', 
+                    rawColor: '#ffffff', 
+                    badgeClass: 'bg-white/15 text-white border border-white/20' 
+                },
+                models: {
+                    'g06': {
+                        name: "Motorola G06",
+                        emoji: "📱",
+                        screen: "6.56\" IPS LCD (90 Hz)",
+                        screentype: "IPS LCD",
+                        hz: 90,
+                        processor: "Helio G81",
+                        ram: "4 GB",
+                        storage: "128 GB",
+                        camera: "Trasera: 15 Mpx / Frontal: 6 Mpx",
+                        charge: "10W",
+                        battery: "5500 mAh",
+                        red: "4G",
+                        durability: "Resistencia básica contra humedad",
+                        highlights: [
+                            "✘ Procesador Helio G81 básico propenso a tirones frecuentes.",
+                            "✘ Velocidad de carga extremadamente lenta de solo 10W.",
+                            "✘ Cámaras de baja resolución (15 Mpx traseros y 6 Mpx frontal)."
+                        ]
+                    },
+                    'g15': {
+                        name: "Motorola G15",
+                        emoji: "📱",
+                        screen: "6.5\" IPS LCD (90 Hz)",
+                        screentype: "IPS LCD",
+                        hz: 90,
+                        processor: "Helio G81",
+                        ram: "4 GB",
+                        storage: "256 / 512 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 8 Mpx",
+                        charge: "18W",
+                        battery: "5200 mAh",
+                        red: "4G",
+                        durability: "Policarbonato simple",
+                        highlights: [
+                            "✘ Pantalla compacta y desactualizada a solo 90Hz de refresco.",
+                            "✘ Carga de tan solo 18W, tarda más de dos horas en llenarse.",
+                            "✘ Helio G81 con rendimiento limitado para tareas de juego exigentes."
+                        ]
+                    },
+                    'g56': {
+                        name: "Motorola G56",
+                        emoji: "📱",
+                        screen: "6.5\" IPS LCD (120 Hz)",
+                        screentype: "IPS LCD",
+                        hz: 120,
+                        processor: "Dimensity 7060",
+                        ram: "8 GB",
+                        storage: "256 / 512 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 32 Mpx",
+                        charge: "33W",
+                        battery: "5200 mAh",
+                        red: "5G",
+                        durability: "Resistencia a salpicaduras estándar",
+                        highlights: [
+                            "✘ Pantalla muy compacta de 6.5 pulgadas con bordes gruesos.",
+                            "✘ Carga media de 33W superada por nuestros watts en Infinix.",
+                            "✘ No cuenta con la durabilidad probada ante impactos de grado militar."
+                        ]
+                    },
+                    'g67': {
+                        name: "Motorola G67",
+                        emoji: "📱",
+                        screen: "6.5\" IPS LCD (120 Hz)",
+                        screentype: "IPS LCD",
+                        hz: 120,
+                        processor: "Dimensity 6300",
+                        ram: "8 GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 32 Mpx",
+                        charge: "33W",
+                        battery: "5200 mAh",
+                        red: "5G",
+                        durability: "Resistencia estándar",
+                        highlights: [
+                            "✘ Velocidad de carga lenta de 33W en su rango de competencia.",
+                            "✘ Procesador Dimensity 6300 con frecuencias recortadas de rendimiento.",
+                            "✘ Diagonal de pantalla compacta de 6.5\" que reduce la inmersión."
+                        ]
+                    },
+                    'g86': {
+                        name: "Motorola G86",
+                        emoji: "📱",
+                        screen: "6.6\" OLED (120 Hz)",
+                        screentype: "OLED",
+                        hz: 120,
+                        processor: "Dimensity 7300",
+                        ram: "8 GB",
+                        storage: "256 / 512 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 32 Mpx",
+                        charge: "33W",
+                        battery: "5200 mAh",
+                        red: "5G",
+                        durability: "Protección contra salpicaduras ligera",
+                        highlights: [
+                            "✘ Carga lenta de 33W que frena tu ritmo diario.",
+                            "✘ No tiene empaques internos de blindaje militar contra caídas duras.",
+                            "✘ Sonido mono básico con menor respuesta acústica."
+                        ]
+                    },
+                    'edge-50-fusion': {
+                        name: "Motorola Edge 50 Fusion",
+                        emoji: "✨",
+                        screen: "6.7\" P-OLED (144 Hz)",
+                        screentype: "P-OLED Curva",
+                        hz: 144,
+                        processor: "Snapdragon 6 Gen 1",
+                        ram: "8 / 12 GB",
+                        storage: "256 / 512 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 32 Mpx",
+                        charge: "68W",
+                        battery: "5000 mAh",
+                        red: "5G",
+                        durability: "IP68 estándar",
+                        highlights: [
+                            "✘ Procesador Snapdragon 6 Gen 1 básico para juegos de alta exigencia.",
+                            "✘ Pantalla curva sumamente expuesta a romperse con facilidad.",
+                            "✘ Sin ranura para expandir memoria MicroSD dedicada."
+                        ]
+                    },
+                    'edge-60-fusion': {
+                        name: "Motorola Edge 60 Fusion",
+                        emoji: "✨",
+                        screen: "6.7\" P-OLED (144 Hz)",
+                        screentype: "P-OLED Curva",
+                        hz: 144,
+                        processor: "Dimensity 7300",
+                        ram: "8 / 12 GB",
+                        storage: "256 / 512 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 32 Mpx",
+                        charge: "68W",
+                        battery: "5200 mAh",
+                        red: "5G",
+                        durability: "IP68 estándar",
+                        highlights: [
+                            "✘ Batería reducida a solo 5200 mAh frente a gigantes de Infinix.",
+                            "✘ No permite expandir tu almacenamiento por medio de tarjetas MicroSD.",
+                            "✘ Pantalla curva vulnerable a caídas accidentales costosas de reparar."
+                        ]
+                    },
+                    'edge-70-fusion': {
+                        name: "Motorola Edge 70 Fusion",
+                        emoji: "✨",
+                        screen: "6.7\" P-OLED (144 Hz)",
+                        screentype: "P-OLED Curva",
+                        hz: 144,
+                        processor: "Snapdragon 7s Gen 3",
+                        ram: "8/12 GB",
+                        storage: "256 / 512 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 32 Mpx",
+                        charge: "68W",
+                        battery: "7000 mAh",
+                        red: "5G",
+                        durability: "IP68 estándar",
+                        highlights: [
+                            "✘ Grosor excesivo y pesadez en el manejo diario debido a sus 7000 mAh.",
+                            "✘ Pantalla curva expuesta a quebraduras por impactos accidentales.",
+                            "✘ Ausencia de bandeja física de expansión para tarjeta MicroSD."
+                        ]
+                    }
+                }
+            },
+            'realme': {
+                brandName: "Realme",
+                mascot: "Gemini_Generated_Image_qt3g6hqt3g6hqt3g-removebg-preview_3.jpg",
+                mascotName: "REALME-GATO",
+                brandColor: { 
+                    border: 'border-yellow-500', 
+                    text: 'text-yellow-500', 
+                    glow: 'shadow-[0_0_30px_rgba(234,179,8,0.3)]', 
+                    bg: 'bg-yellow-500/20', 
+                    rawColor: '#eab308',
+                    badgeClass: 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30'
+                },
+                models: {
+                    '15': {
+                        name: "Realme 15",
+                        emoji: "📱",
+                        screen: "6.72\" IPS LCD (120 Hz)",
+                        screentype: "IPS LCD",
+                        hz: 120,
+                        processor: "Dimensity 7300",
+                        ram: "8 GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 50 Mpx",
+                        charge: "45W",
+                        battery: "6500 mAh",
+                        red: "5G",
+                        durability: "Cuerpo plástico convencional",
+                        highlights: [
+                            "✘ Grosor y pesadez física que cansa la mano en uso continuo.",
+                            "✘ Chasis estándar que se marca y daña rápidamente ante golpes.",
+                            "✘ Bloatware excesivo en la capa de personalización de software."
+                        ]
+                    },
+                    '15t': {
+                        name: "Realme 15T",
+                        emoji: "📱",
+                        screen: "6.7\" IPS LCD (120 Hz)",
+                        screentype: "IPS LCD",
+                        hz: 120,
+                        processor: "Dimensity 6400",
+                        ram: "8/12 GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 50 Mpx",
+                        charge: "45W",
+                        battery: "6550 mAh",
+                        red: "5G",
+                        durability: "Estructura de plástico estándar",
+                        highlights: [
+                            "✘ Procesador Dimensity 6400 con menor desempeño que nuestros chips Note.",
+                            "✘ Elevada temperatura posterior bajo largas sesiones de juegos.",
+                            "✘ Sin certificaciones rigurosas anticaídas militar."
+                        ]
+                    },
+                    '15t-pro': {
+                        name: "Realme 15T PRO",
+                        emoji: "⚡",
+                        screen: "6.7\" IPS LCD (120 Hz)",
+                        screentype: "IPS LCD",
+                        hz: 120,
+                        processor: "Dimensity 7300",
+                        ram: "8 GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 50 Mpx",
+                        charge: "80W",
+                        battery: "8000 mAh",
+                        red: "5G",
+                        durability: "Chasis convencional pesado",
+                        highlights: [
+                            "✘ Peso sumamente elevado en mano por su enorme batería de 8000 mAh.",
+                            "✘ No tiene ranura dedicada de MicroSD.",
+                            "✘ Sin certificaciones de alta resistencia ante caídas."
+                        ]
+                    },
+                    'c100': {
+                        name: "Realme C100",
+                        emoji: "🔋",
+                        screen: "6.72\" IPS LCD (90 Hz)",
+                        screentype: "IPS LCD",
+                        hz: 90,
+                        processor: "Helio G92",
+                        ram: "8 GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 8 Mpx",
+                        charge: "45W",
+                        battery: "8000 mAh",
+                        red: "4G",
+                        durability: "Carcasa plástica básica",
+                        highlights: [
+                            "✘ Tasa de refresco obsoleta de 90Hz.",
+                            "✘ Dispositivo excesivamente pesado en bolsillo por su volumen físico.",
+                            "✘ Procesador Helio G92 propenso a ralentizaciones en multitarea."
+                        ]
+                    },
+                    'c100x': {
+                        name: "Realme C100x",
+                        emoji: "⚙️",
+                        screen: "6.7\" TFT LCD (90 Hz)",
+                        screentype: "TFT LCD",
+                        hz: 90,
+                        processor: "Unisoc T615",
+                        ram: "4 GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 5 Mpx",
+                        charge: "45W",
+                        battery: "8000 mAh",
+                        red: "4G",
+                        durability: "Plástico convencional",
+                        highlights: [
+                            "✘ Pantalla TFT LCD con inferiores ángulos de visión y colores opacos.",
+                            "✘ Procesador Unisoc T615 de gama de entrada muy básico.",
+                            "✘ Cámara selfie de muy baja fidelidad (5 Mpx)."
+                        ]
+                    },
+                    'c100i': {
+                        name: "Realme C100i",
+                        emoji: "🔋",
+                        screen: "6.7\" IPS LCD (90 Hz)",
+                        screentype: "IPS LCD",
+                        hz: 90,
+                        processor: "Unisoc T615",
+                        ram: "4 GB",
+                        storage: "128 GB",
+                        camera: "Trasera: 8 Mpx / Frontal: 5 Mpx",
+                        charge: "15W",
+                        battery: "6000 mAh",
+                        red: "4G",
+                        durability: "Cuerpo plástico simple",
+                        highlights: [
+                            "✘ Almacenamiento limitado de solo 128 GB.",
+                            "✘ Cámara principal de muy baja definición de 8 Mpx.",
+                            "✘ Carga sumamente lenta de 15W."
+                        ]
+                    }
+                }
+            },
+            'oppo': {
+                brandName: "OPPO",
+                mascot: "infinixvsoppo-removebg-preview_3.jpg",
+                mascotName: "OPPO-OLLIE",
+                brandColor: { 
+                    border: 'border-red-600', 
+                    text: 'text-red-500', 
+                    glow: 'shadow-[0_0_30px_rgba(220,38,38,0.3)]', 
+                    bg: 'bg-red-600/20', 
+                    rawColor: '#dc2626',
+                    badgeClass: 'bg-red-600/20 text-red-400 border border-red-500/30'
+                },
+                models: {
+                    'a6': {
+                        name: "OPPO A6",
+                        emoji: "📱",
+                        screen: "6.67\" IPS LCD (90 Hz)",
+                        screentype: "IPS LCD",
+                        hz: 90,
+                        processor: "Snapdragon 685",
+                        ram: "8 GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 8 Mpx",
+                        charge: "45W",
+                        battery: "7000 mAh",
+                        red: "4G",
+                        durability: "Plástico convencional",
+                        highlights: [
+                            "✘ Pantalla de tan solo 90Hz con panel convencional.",
+                            "✘ Procesamiento moderado bajo el procesador Snapdragon 685.",
+                            "✘ Chasis sumamente grueso y pesado por su volumen físico."
+                        ]
+                    },
+                    'a6c': {
+                        name: "OPPO A6c",
+                        emoji: "📱",
+                        screen: "6.75\" IPS LCD (90 Hz)",
+                        screentype: "IPS LCD",
+                        hz: 90,
+                        processor: "Unisoc T7250",
+                        ram: "4GB",
+                        storage: "128 GB",
+                        camera: "Trasera: 13 Mpx / Frontal: 5 Mpx",
+                        charge: "N/A",
+                        battery: "6600 mAh",
+                        red: "4G",
+                        durability: "Cuerpo de plástico convencional",
+                        highlights: [
+                            "✘ No cuenta con sistema de carga rápida especificado (N/A).",
+                            "✘ Almacenamiento recortado de 128 GB y 4GB de RAM.",
+                            "✘ Cámara trasera básica de 13 Mpx con bajo nivel de detalle."
+                        ]
+                    },
+                    'a6k': {
+                        name: "OPPO A6k",
+                        emoji: "📱",
+                        screen: "6.67\" IPS LCD (90 Hz)",
+                        screentype: "IPS LCD",
+                        hz: 90,
+                        processor: "Snapdragon 685",
+                        ram: "4 GB",
+                        storage: "128 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 50 Mpx",
+                        charge: "45W",
+                        battery: "6500 mAh",
+                        red: "4G",
+                        durability: "Protección intermedia básica",
+                        highlights: [
+                            "✘ Pantalla de 90Hz que carece de la fluidez óptima de Infinix.",
+                            "✘ Memoria RAM física de solo 4 GB que limita la multitarea pesada.",
+                            "✘ Sin certificaciones militares válidas contra caídas."
+                        ]
+                    },
+                    'a6-pro': {
+                        name: "OPPO A6 Pro 5g",
+                        emoji: "📱",
+                        screen: "6.67\" IPS LCD (120 Hz)",
+                        screentype: "IPS LCD",
+                        hz: 120,
+                        processor: "Dimensity 6300",
+                        ram: "8 GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 16 Mpx",
+                        charge: "88 W",
+                        battery: "65000 mAh", 
+                        red: "5G",
+                        durability: "Chasis convencional estándar",
+                        highlights: [
+                            "✘ Procesador Dimensity 6300 con núcleos de frecuencia reducida.",
+                            "✘ Formato de peso sumamente desequilibrado en mano.",
+                            "✘ Sin blindaje anticaídas probado SGS 5 estrellas."
+                        ]
+                    },
+                    'reno14f': {
+                        name: "OPPO Reno 14F",
+                        emoji: "✨",
+                        screen: "6.67\" AMOLED (120 Hz)",
+                        screentype: "AMOLED",
+                        hz: 120,
+                        processor: "Snapdragon 6Gen1",
+                        ram: "8 GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 16 Mpx",
+                        charge: "88 W",
+                        battery: "65000 mAh", 
+                        red: "5G",
+                        durability: "Estructura convencional de vidrio",
+                        highlights: [
+                            "✘ Procesador Snapdragon 6 Gen 1 básico para su gama de costo.",
+                            "✘ Ausencia de bandeja dedicada para expansión de MicroSD.",
+                            "✘ Vulnerabilidad física ante caídas accidentales."
+                        ]
+                    },
+                    'reno14': {
+                        name: "OPPO Reno 14",
+                        emoji: "✨",
+                        screen: "6.7\" AMOLED (120 Hz)",
+                        screentype: "AMOLED",
+                        hz: 120,
+                        processor: "Dimensity 8350",
+                        ram: "8/12 GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 50 Mpx",
+                        charge: "80W",
+                        battery: "6000 mAh",
+                        red: "5G",
+                        durability: "IP64 protección estándar",
+                        highlights: [
+                            "✘ Almacenamiento limitado fijo de 256 GB sin ranura de MicroSD.",
+                            "✘ No tiene empaques de amortiguación militar en esquinas.",
+                            "✘ Audio mono propenso a saturación en volúmenes altos."
+                        ]
+                    }
+                }
+            },
+            'tecno': {
+                brandName: "Tecno",
+                mascot: "infinixvstecno-removebg-preview_3.jpg",
+                mascotName: "TECNO-ROBOT",
+                brandColor: { 
+                    border: 'border-sky-400', 
+                    text: 'text-sky-400', 
+                    glow: 'shadow-[0_0_30px_rgba(56,189,248,0.25)]', 
+                    bg: 'bg-sky-400/20', 
+                    rawColor: '#38bdf8',
+                    badgeClass: 'bg-sky-400/20 text-sky-400 border border-sky-400/30'
+                },
+                models: {
+                    'sparkgo3': {
+                        name: "Tecno Spark GO3",
+                        emoji: "📱",
+                        screen: "6.6\" IPS LCD (90 Hz)",
+                        screentype: "IPS LCD",
+                        hz: 90,
+                        processor: "Unisoc T7250",
+                        ram: "4 GB",
+                        storage: "128 GB",
+                        camera: "Trasera: 13 Mpx / Frontal: 8 Mpx",
+                        charge: "15W",
+                        battery: "5000 mAh",
+                        red: "4G",
+                        durability: "Plástico básico",
+                        highlights: [
+                            "✘ Procesador Unisoc T7250 muy limitado en operaciones pesadas.",
+                            "✘ Pantalla lenta de 90Hz con resolución de entrada.",
+                            "✘ Velocidad de carga lenta de tan solo 15W."
+                        ]
+                    },
+                    'spark50': {
+                        name: "Tecno Spark 50",
+                        emoji: "📱",
+                        screen: "6.6\" IPS LCD (90 Hz)",
+                        screentype: "IPS LCD",
+                        hz: 90,
+                        processor: "Helio G81",
+                        ram: "4/8 GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 8 Mpx",
+                        charge: "18w",
+                        battery: "7000 mAh",
+                        red: "4G",
+                        durability: "Carcasa plástica estándar",
+                        highlights: [
+                            "✘ Procesador Helio G81 de bajo rendimiento.",
+                            "✘ Tasa de refresco baja de 90Hz en pantalla de tamaño compacto.",
+                            "✘ Carga de solo 18W, tarda horas en llenar sus 7000 mAh."
+                        ]
+                    },
+                    'spark50-5g': {
+                        name: "Tecno Spark 50 5G",
+                        emoji: "⚡",
+                        screen: "6.6\" IPS LCD (120 Hz)",
+                        screentype: "IPS LCD",
+                        hz: 120,
+                        processor: "Dimensity 6400",
+                        ram: "8 GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 8 Mpx",
+                        charge: "45 W",
+                        battery: "6500 mAh",
+                        red: "5G",
+                        durability: "Policarbonato de alta densidad",
+                        highlights: [
+                            "✘ Carece del brillo y colores de la tecnología AMOLED.",
+                            "✘ Sensor frontal recortado a solo 8 Mpx.",
+                            "✘ Sin pruebas rigurosas certificadas contra caídas de 5 estrellas."
+                        ]
+                    },
+                    'camon50': {
+                        name: "Tecno Camon 50",
+                        emoji: "📸",
+                        screen: "6.78\" AMOLED (120 Hz)",
+                        screentype: "AMOLED",
+                        hz: 120,
+                        processor: "Helio G200 Ultimate",
+                        ram: "8/12 GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 32 Mpx",
+                        charge: "45W",
+                        battery: "6500 mAh",
+                        red: "4G",
+                        durability: "IP53 resistencia de entrada",
+                        highlights: [
+                            "✘ No tiene chasis blindado de protección militar.",
+                            "✘ Conectividad reducida a redes móviles de 4G.",
+                            "✘ Software con excesivas aplicaciones preinstaladas molestas."
+                        ]
+                    },
+                    'pova-curve-2': {
+                        name: "Tecno Pova Curve 2",
+                        emoji: "📱",
+                        screen: "6.78\" AMOLED Curva (120 Hz)",
+                        screentype: "AMOLED Curva",
+                        hz: 120,
+                        processor: "Dimensity 7100",
+                        ram: "8GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 13 Mpx",
+                        charge: "45W",
+                        battery: "8000 mAh",
+                        red: "5G",
+                        durability: "IP54 protección media",
+                        highlights: [
+                            "✘ Dispositivo excesivamente robusto y pesado debido a sus 8000 mAh.",
+                            "✘ Pantalla curva vulnerable a roturas accidentales y caídas laterales.",
+                            "✘ Falta de ranura de expansión MicroSD dedicada."
+                        ]
+                    }
+                }
+            },
+            'xiaomi': {
+                brandName: "Xiaomi",
+                mascot: "infinix vs Xioami.png",
+                mascotName: "XIAOMI-MITU",
+                brandColor: { 
+                    border: 'border-orange-500', 
+                    text: 'text-orange-500', 
+                    glow: 'shadow-[0_0_30px_rgba(249,115,22,0.25)]', 
+                    bg: 'bg-orange-500/20', 
+                    rawColor: '#f97316',
+                    badgeClass: 'bg-orange-500/20 text-orange-400 border border-orange-500/30'
+                },
+                models: {
+                    'redmi15': {
+                        name: "Redmi 15",
+                        emoji: "📱",
+                        screen: "6.7\" IPS LCD (90 Hz)",
+                        screentype: "IPS LCD",
+                        hz: 90,
+                        processor: "Snapdragon 685",
+                        ram: "8 GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 8 Mpx",
+                        charge: "33W",
+                        battery: "7000 mAh",
+                        red: "4G",
+                        durability: "Cuerpo plástico simple",
+                        highlights: [
+                            "✘ Pantalla lenta de 90Hz con panel básico.",
+                            "✘ Tarda horas conectado al cargador de 33W por su batería de 7000 mAh.",
+                            "✘ Chipset Snapdragon 685 de rendimiento modesto en gráficos."
+                        ]
+                    },
+                    'note15': {
+                        name: "Redmi Note 15",
+                        emoji: "📱",
+                        screen: "6.67\" AMOLED (120 Hz)",
+                        screentype: "AMOLED",
+                        hz: 120,
+                        processor: "Helio G100 / Snapdragon 6 Gen 3",
+                        ram: "8 GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 108 Mpx / Frontal: 20 Mpx",
+                        charge: "33W / 45W",
+                        battery: "6000 / 5520 mAh",
+                        red: "4G / 5G",
+                        durability: "IP54 estándar",
+                        highlights: [
+                            "✘ Diagonal de pantalla inferior de 6.67 pulgadas.",
+                            "✘ Chasis estándar vulnerable a abolladuras y rayones accidentales.",
+                            "✘ Sin blindaje certificado grado militar."
+                        ]
+                    },
+                    'note15-pro': {
+                        name: "Redmi Note 15 Pro",
+                        emoji: "📱",
+                        screen: "6.67\" Super AMOLED (120 Hz)",
+                        screentype: "Super AMOLED",
+                        hz: 120,
+                        processor: "Helio G200 / Dimensity 7400",
+                        ram: "8 GB",
+                        storage: "256 GB",
+                        camera: "Trasera: 200 Mpx / Frontal: 32 Mpx",
+                        charge: "45W",
+                        battery: "6500 / 6580 mAh",
+                        red: "4G / 5G",
+                        durability: "IP54 estándar",
+                        highlights: [
+                            "✘ Sensor de 200 Mpx que genera fotografías de tamaño masivo colapsando el almacenamiento.",
+                            "✘ Estructura curva tradicional sin amortiguación lateral.",
+                            "✘ Menor velocidad de carga comparado con Note 60 Pro de Infinix."
+                        ]
+                    },
+                    'note15-pro-plus': {
+                        name: "Redmi Note 15 Pro +",
+                        emoji: "⚡",
+                        screen: "6.67\" Super AMOLED (120 Hz)",
+                        screentype: "Super AMOLED",
+                        hz: 120,
+                        processor: "Snapdragon 7S Gen 4",
+                        ram: "8/12 GB",
+                        storage: "256/512GB",
+                        camera: "Trasera: 200 Mpx / Frontal: 32 Mpx",
+                        charge: "100W",
+                        battery: "6500 mAh",
+                        red: "5G",
+                        durability: "IP68 estándar",
+                        highlights: [
+                            "✘ Sensor fotográfico de 200 Mpx de procesamiento perezoso.",
+                            "✘ No tiene blindaje anticaídas de grado militar certificado.",
+                            "✘ Diagonal de pantalla más pequeña que la gama Note de Infinix."
+                        ]
+                    },
+                    'xiaomi15': {
+                        name: "Xiaomi 15",
+                        emoji: "✨",
+                        screen: "6.36\" LTPO OLED (120 Hz)",
+                        screentype: "LTPO OLED",
+                        hz: 120,
+                        processor: "Snapdragon 8 ELITE",
+                        ram: "12/16 GB",
+                        storage: "512 GB",
+                        camera: "Trasera: 50 Mpx / Frontal: 32 Mpx",
+                        charge: "90W",
+                        battery: "5240 mAh",
+                        red: "5G",
+                        durability: "IP68 Avanzada",
+                        highlights: [
+                            "✘ Diagonal de pantalla sumamente pequeña de 6.36 pulgadas.",
+                            "✘ Elevadísimo rango de precio fuera de la accesibilidad del mercado de masa.",
+                            "✘ Batería reducida a 5240 mAh frente a la gran autonomía de Infinix."
+                        ]
+                    }
+                }
+            }
+        };
+
+        // Estado inicial de la aplicación
+        let activeInfinixId = 'hot-70';
+        let activeRivalBrand = 'samsung';
+        let activeRivalId = 'a07';
+
+        // Llenar listas desplegables iniciales
+        function populateDropdowns() {
+            // Llenar selector Infinix
+            const infSelect = document.getElementById('select-infinix');
+            if (infSelect) {
+                infSelect.innerHTML = '';
+                Object.keys(infinixDatabase).forEach(key => {
+                    const model = infinixDatabase[key];
+                    const opt = document.createElement('option');
+                    opt.value = key;
+                    opt.textContent = `${model.emoji} ${model.name}`;
+                    if (key === activeInfinixId) opt.selected = true;
+                    infSelect.appendChild(opt);
+                });
+            }
+
+            // Llenar marcas de rivales
+            const brandSelect = document.getElementById('select-rival-brand');
+            if (brandSelect) {
+                brandSelect.value = activeRivalBrand;
+            }
+
+            // Llenar selector de modelos rivales
+            populateRivalModelsDropdown();
+        }
+
+        // Llenar modelos del rival según la marca seleccionada
+        function populateRivalModelsDropdown() {
+            const modelSelect = document.getElementById('select-rival-model');
+            if (modelSelect) {
+                modelSelect.innerHTML = '';
+                const brandData = competitorsDatabase[activeRivalBrand];
+                Object.keys(brandData.models).forEach(key => {
+                    const model = brandData.models[key];
+                    const opt = document.createElement('option');
+                    opt.value = key;
+                    opt.textContent = `${model.emoji} ${model.name}`;
+                    if (key === activeRivalId) opt.selected = true;
+                    modelSelect.appendChild(opt);
+                });
+            }
+        }
+
+        // Acciones de Selección de Dispositivos por Desplegables
+        function selectInfinix(id) {
+            activeInfinixId = id;
+            updateComparison();
+        }
+
+        // Acciones de Selección de Rivales
+        function selectRival(id) {
+            activeRivalId = id;
+            updateComparison();
+        }
+
+        // Cambio de marcas
+        function changeRivalBrand(brand) {
+            activeRivalBrand = brand;
+            
+            // Seleccionar por defecto el primer modelo de la marca elegida
+            const firstModelId = Object.keys(competitorsDatabase[brand].models)[0];
+            activeRivalId = firstModelId;
+
+            populateRivalModelsDropdown();
+            updateComparison();
+        }
+
+        // Lógica de cálculo dinámico para las ventajas y render en UI
+        function updateComparison() {
+            const inf = infinixDatabase[activeInfinixId];
+            const brandInfo = competitorsDatabase[activeRivalBrand];
+            const riv = brandInfo.models[activeRivalId];
+
+            // ACTUALIZACIÓN DE BORDES DINÁMICOS SEGÚN COLOR COGNITIVO DE LA MARCA ENEMIGA
+            const rivalCard = document.getElementById('rival-brand-card');
+            const rivalPhoneFrame = document.getElementById('rival-phone-frame');
+            const rivalBadge = document.getElementById('rival-badge-text');
+            const selectBrandEl = document.getElementById('select-rival-brand');
+            const selectModelEl = document.getElementById('select-rival-model');
+
+            // Limpiar clases previas de bordes y sombras con condicionales para evitar errores si no están montadas
+            if (rivalCard) {
+                rivalCard.className = "bg-gradient-to-br from-darkCard to-black border-2 rounded-3xl p-4 sm:p-6 relative overflow-hidden group shadow-2xl flex flex-col justify-between transition-all duration-300 w-full";
+            }
+            if (rivalPhoneFrame) {
+                rivalPhoneFrame.className = "relative w-full max-w-[12rem] sm:max-w-[14rem] h-[18rem] sm:h-80 bg-gradient-to-b from-gray-950 to-black rounded-[1.8rem] sm:rounded-[2.2rem] p-2.5 sm:p-3 border-[3px] flex flex-col justify-between overflow-hidden transition-all duration-300";
+            }
+            if (rivalBadge) {
+                rivalBadge.className = "absolute top-4 right-4 font-black text-[9px] px-3 py-1 rounded-full orbitron tracking-wider";
+            }
+            if (selectBrandEl) {
+                selectBrandEl.className = "rival-select w-full bg-darkBg text-white border-2 rounded-xl px-4 py-3 text-xs sm:text-sm font-black focus:ring-1 transition-all cursor-pointer shadow-lg";
+            }
+            if (selectModelEl) {
+                selectModelEl.className = "rival-select w-full bg-darkBg text-white border-2 rounded-xl px-4 py-3 text-xs sm:text-sm font-black focus:ring-1 transition-all cursor-pointer shadow-lg";
+            }
+
+            // Aplicar estilo de color dinámico de marca
+            const styles = brandInfo.brandColor;
+            if (rivalCard) rivalCard.classList.add(styles.border, styles.glow);
+            if (rivalPhoneFrame) rivalPhoneFrame.classList.add(styles.border);
+            if (rivalBadge) rivalBadge.classList.add(styles.bg);
+            if (selectBrandEl) selectBrandEl.classList.add(styles.border, `focus:border-${activeRivalBrand}`, `focus:ring-${activeRivalBrand}`);
+            if (selectModelEl) selectModelEl.classList.add(styles.border, `focus:border-${activeRivalBrand}`, `focus:ring-${activeRivalBrand}`);
+
+            // Actualizar textos rápidos de cabeceras
+            const rivalBrandLabel = document.getElementById('rival-brand-label');
+            if (rivalBrandLabel) {
+                rivalBrandLabel.textContent = `${brandInfo.brandName.toUpperCase()} EN COLA`;
+                rivalBrandLabel.className = `text-[9px] font-bold uppercase tracking-widest ${styles.text} block`;
+            }
+            
+            // COLOR DE FONDO Y TEXTO DEL BADGE "COMPETENCIA"
+            if (rivalBadge) {
+                rivalBadge.style.backgroundColor = styles.rawColor;
+                if (activeRivalBrand === 'motorola' || activeRivalBrand === 'realme' || activeRivalBrand === 'tecno') {
+                    rivalBadge.style.color = '#050811'; 
+                } else {
+                    rivalBadge.style.color = '#ffffff'; 
+                }
+            }
+
+            // 1. Actualizar Tarjeta e Inputs Visuales Infinix
+            const infCardName = document.getElementById('inf-card-name');
+            if (infCardName) infCardName.textContent = inf.name.toUpperCase();
+            
+            const infCardColor = document.getElementById('inf-card-color');
+            if (infCardColor) infCardColor.textContent = `Color: ${inf.color}`;
+
+            // Actualizar el smartphone simulado Infinix
+            const infRenderHz = document.getElementById('inf-render-hz');
+            if (infRenderHz) infRenderHz.textContent = `${inf.hz} Hz`;
+            
+            const infRenderScreen = document.getElementById('inf-render-screentype');
+            if (infRenderScreen) infRenderScreen.textContent = inf.screentype;
+            
+            const infRenderCpu = document.getElementById('inf-render-cpu');
+            if (infRenderCpu) infRenderCpu.textContent = inf.processor.split(' (')[0];
+            
+            const infRenderBat = document.getElementById('inf-render-bat');
+            if (infRenderBat) infRenderBat.textContent = `${inf.battery} / ${inf.charge}`;
+            
+            // Certificación Militar SOLO para HOT 70
+            const infBadge = document.getElementById('inf-render-badge');
+            if (infBadge) {
+                if (activeInfinixId === 'hot-70') {
+                    infBadge.textContent = "SGS MILITARY 5★";
+                    infBadge.className = "text-[7px] font-black text-infinix tracking-wider uppercase";
+                } else {
+                    infBadge.textContent = inf.durability.split('contra')[0].split('-')[0].trim().toUpperCase();
+                    infBadge.className = "text-[7px] font-black text-yellow-500 tracking-wider uppercase";
+                }
+            }
+
+            const infBullets = document.getElementById('inf-card-bullets');
+            if (infBullets) {
+                infBullets.innerHTML = '';
+                inf.highlights.forEach(h => {
+                    const li = document.createElement('li');
+                    li.className = "flex items-start gap-2 text-xs sm:text-sm";
+                    li.innerHTML = `<span class="text-infinix font-bold">✔</span> <span>${h}</span>`;
+                    infBullets.appendChild(li);
+                });
+            }
+
+            // 2. Actualizar Tarjeta e Inputs Visuales Rival
+            const rivCardName = document.getElementById('riv-card-name');
+            if (rivCardName) rivCardName.textContent = riv.name.toUpperCase();
+            
+            const rivCardBrand = document.getElementById('riv-card-brand');
+            if (rivCardBrand) rivCardBrand.textContent = `Marca: ${brandInfo.brandName}`;
+
+            // Actualizar el smartphone simulado Rival
+            const rivRenderHz = document.getElementById('riv-render-hz');
+            if (rivRenderHz) {
+                rivRenderHz.textContent = `${riv.hz || '120'} Hz`;
+                rivRenderHz.className = `${styles.text} text-xl sm:text-3xl font-black orbitron transition-colors duration-300`;
+            }
+            
+            const rivRenderScreen = document.getElementById('riv-render-screentype');
+            if (rivRenderScreen) rivRenderScreen.textContent = riv.screentype;
+            
+            const rivRenderCpu = document.getElementById('riv-render-cpu');
+            if (rivRenderCpu) rivRenderCpu.textContent = riv.processor;
+            
+            const rivRenderBat = document.getElementById('riv-render-bat');
+            if (rivRenderBat) {
+                rivRenderBat.textContent = `${riv.battery} / ${riv.charge}`;
+                rivRenderBat.className = `text-[9px] sm:text-[10px] font-bold ${styles.text} mt-1`;
+            }
+            
+            const rivBadgeLabel = document.getElementById('riv-render-badge');
+            if (rivBadgeLabel) {
+                rivBadgeLabel.textContent = riv.durability.split(',')[0].substring(0, 18).toUpperCase();
+            }
+
+            const rivBullets = document.getElementById('riv-card-bullets');
+            if (rivBullets) {
+                rivBullets.innerHTML = '';
+                riv.highlights.forEach(h => {
+                    const li = document.createElement('li');
+                    li.className = "flex items-start gap-2 text-xs sm:text-sm";
+                    li.innerHTML = h.startsWith("✘") 
+                        ? `<span class="text-red-500 font-bold">✘</span> <span>${h.replace("✘ ", "")}</span>`
+                        : `<span class="text-yellow-500 font-bold">•</span> <span>${h}</span>`;
+                    rivBullets.appendChild(li);
+                });
+            }
+
+            // 3. Actualizar Cabeceras de la Tabla Técnica
+            const tblInfHeader = document.getElementById('table-inf-header');
+            if (tblInfHeader) tblInfHeader.textContent = inf.name.toUpperCase();
+            
+            const tblRivHeader = document.getElementById('table-riv-header');
+            if (tblRivHeader) tblRivHeader.textContent = riv.name.toUpperCase();
+
+            // 4. Llenar filas técnicas de forma dinámica
+            // Pantalla
+            const tblInfScreen = document.getElementById('tbl-inf-screen');
+            if (tblInfScreen) tblInfScreen.innerHTML = `${inf.screen}<br><span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-infinix/20 text-infinix mt-1">${inf.hz}Hz ${inf.screentype}</span>`;
+            
+            const tblRivScreen = document.getElementById('tbl-riv-screen');
+            if (tblRivScreen) tblRivScreen.innerHTML = `${riv.screen || '6.6" Screen'}<br><span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold ${styles.badgeClass} mt-1">${riv.hz || '120'}Hz ${riv.screentype}</span>`;
+            
+            const tblAdvScreen = document.getElementById('tbl-adv-screen');
+            if (tblAdvScreen) {
+                let screenAdvText = "";
+                if (inf.hz > (riv.hz || 120)) {
+                    screenAdvText = `<span class="inline-flex items-center justify-center p-1 bg-infinix/20 text-infinix rounded-full"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg></span><div class="text-[9px] text-infinix font-bold mt-0.5">+${Math.round(((inf.hz - (riv.hz || 120))/(riv.hz || 120))*100)}% Más fluido (${inf.hz}Hz)</div>`;
+                } else if (inf.hz === (riv.hz || 120)) {
+                    screenAdvText = `<span class="inline-flex items-center px-2 py-0.5 bg-yellow-500/15 text-yellow-500 rounded text-[9px] font-bold">Empate</span><div class="text-[9px] text-gray-400 mt-0.5">Misma tasa de refresco</div>`;
+                } else {
+                    screenAdvText = `<span class="inline-flex items-center px-2 py-0.5 bg-gray-800 text-gray-400 rounded text-[9px] font-bold">Equivalente</span><div class="text-[9px] text-gray-400 mt-0.5">Competidor ofrece buena fluidez</div>`;
+                }
+                tblAdvScreen.innerHTML = screenAdvText;
+            }
+
+            // Procesador
+            const tblInfCpu = document.getElementById('tbl-inf-cpu');
+            if (tblInfCpu) tblInfCpu.innerHTML = `${inf.processor}`;
+            
+            const tblRivCpu = document.getElementById('tbl-riv-cpu');
+            if (tblRivCpu) tblRivCpu.innerHTML = `${riv.processor}`;
+            
+            const tblAdvCpu = document.getElementById('tbl-adv-cpu');
+            if (tblAdvCpu) {
+                tblAdvCpu.innerHTML = `
+                    <span class="inline-flex items-center justify-center p-1 bg-infinix/20 text-infinix rounded-full"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg></span>
+                    <div class="text-[9px] text-infinix font-bold mt-0.5">Motor optimizado de alto rendimiento</div>
+                `;
+            }
+
+            // Memoria
+            const tblInfMem = document.getElementById('tbl-inf-mem');
+            if (tblInfMem) tblInfMem.innerHTML = `${inf.ram} RAM<br><span class="text-[11px] text-gray-400">${inf.storage} ROM</span>`;
+            
+            const tblRivMem = document.getElementById('tbl-riv-mem');
+            if (tblRivMem) tblRivMem.innerHTML = `${riv.ram} RAM<br><span class="text-[11px] text-gray-400">${riv.storage} ROM</span>`;
+            
+            const tblAdvMem = document.getElementById('tbl-adv-mem');
+            if (tblAdvMem) {
+                tblAdvMem.innerHTML = `
+                    <span class="inline-flex items-center px-1.5 py-0.5 bg-infinix/20 text-infinix rounded text-[10px] font-bold">Excelente</span>
+                    <div class="text-[9px] text-gray-400 mt-0.5">Almacenamiento y expansión veloz</div>
+                `;
+            }
+
+            // Batería
+            const tblInfBat = document.getElementById('tbl-inf-bat');
+            if (tblInfBat) tblInfBat.innerHTML = `${inf.battery}<br><span class="text-[11px] text-infinix font-semibold">Carga: ${inf.charge}</span>`;
+            
+            const tblRivBat = document.getElementById('tbl-riv-bat');
+            if (tblRivBat) tblRivBat.innerHTML = `${riv.battery}<br><span class="text-[11px] ${styles.text} font-semibold">Carga: ${riv.charge}</span>`;
+            
+            const tblAdvBat = document.getElementById('tbl-adv-bat');
+            if (tblAdvBat) {
+                let batAdvText = "";
+                const infAh = parseInt(inf.battery);
+                const rivAh = parseInt(riv.battery);
+                if (infAh > rivAh) {
+                    batAdvText = `<span class="inline-flex items-center justify-center p-1 bg-infinix/20 text-infinix rounded-full"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg></span><div class="text-[9px] text-infinix font-bold mt-0.5">Mayor mAh de duración diaria</div>`;
+                } else if (infAh === rivAh) {
+                    batAdvText = `<span class="inline-flex items-center px-2 py-0.5 bg-yellow-500/15 text-yellow-500 rounded text-[9px] font-bold">Empate</span><div class="text-[9px] text-gray-400 mt-0.5">Capacidad equivalente</div>`;
+                } else {
+                    batAdvText = `<span class="inline-flex items-center justify-center p-1 bg-infinix/20 text-infinix rounded-full"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg></span><div class="text-[9px] text-infinix font-bold mt-0.5">Infinix gestiona mejor la velocidad de carga</div>`;
+                }
+                tblAdvBat.innerHTML = batAdvText;
+            }
+
+            // Red
+            const tblInfRed = document.getElementById('tbl-inf-red');
+            if (tblInfRed) tblInfRed.innerHTML = inf.red;
+            
+            const tblRivRed = document.getElementById('tbl-riv-red');
+            if (tblRivRed) tblRivRed.innerHTML = riv.red;
+            
+            const tblAdvRed = document.getElementById('tbl-adv-red');
+            if (tblAdvRed) tblAdvRed.innerHTML = `<div class="text-[9px] text-gray-300">Conectividad balanceada y estable</div>`;
+
+            // Resistencia
+            const tblInfDur = document.getElementById('tbl-inf-dur');
+            if (tblInfDur) tblInfDur.innerHTML = inf.durability;
+            
+            const tblRivDur = document.getElementById('tbl-riv-dur');
+            if (tblRivDur) tblRivDur.innerHTML = riv.durability;
+            
+            const tblAdvDur = document.getElementById('tbl-adv-dur');
+            if (tblAdvDur) {
+                let durAdvText = "";
+                if (activeInfinixId === 'hot-70') {
+                    durAdvText = `<span class="inline-flex items-center justify-center p-1 bg-infinix/20 text-infinix rounded-full"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg></span><div class="text-[9px] text-infinix font-black mt-0.5">SGS GRADO MILITAR 5★</div>`;
+                } else {
+                    durAdvText = `<span class="inline-flex items-center px-2 py-0.5 bg-gray-800 text-gray-400 rounded text-[9px] font-bold">Equilibrado</span><div class="text-[9px] text-gray-400 mt-0.5">Protección contra salpicaduras</div>`;
+                }
+                tblAdvDur.innerHTML = durAdvText;
+            }
+
+            // Cámaras
+            const tblInfCam = document.getElementById('tbl-inf-cam');
+            if (tblInfCam) tblInfCam.innerHTML = inf.camera;
+            
+            const tblRivCam = document.getElementById('tbl-riv-cam');
+            if (tblRivCam) tblRivCam.innerHTML = riv.camera;
+            
+            const tblAdvCam = document.getElementById('tbl-adv-cam');
+            if (tblAdvCam) {
+                tblAdvCam.innerHTML = `
+                    <span class="inline-flex items-center px-1.5 py-0.5 bg-yellow-500/15 text-yellow-400 rounded text-[9px] font-bold">Optimizado</span>
+                    <div class="text-[9px] text-gray-400 mt-0.5">Procesamiento inteligente de color de piel y contraste</div>
+                `;
+            }
+
+            // 5. Actualizar Pestaña de Objeciones Dinámica
+            updateObjectionsUI(inf, riv);
+        }
+
+        // Generación asíncrona de objeciones según el cruce exacto
+        function updateObjectionsUI(inf, riv) {
+            const container = document.getElementById('objections-list-container');
+            if (container) {
+                container.innerHTML = '';
+
+                const dataObj = [
+                    {
+                        q: `¿Por qué elegir ${inf.name} si el rival ${riv.name} es muy conocido en el mercado?`,
+                        a: `El reconocimiento de marca del rival infla su precio final en tiendas. Con el <strong>${inf.name}</strong>, el cliente no paga costo de publicidad, sino componentes reales de alta tecnología: una pantalla súper fluida de <strong>${inf.screen} con ${inf.hz}Hz</strong> y una velocidad de carga que duplica las alternativas del mercado.`
+                    },
+                    {
+                        q: `El cliente duda entre las cámaras de ${inf.name} (${inf.camera.split(' / ')[0]}) y ${riv.name} (${riv.camera.split(' / ')[0]})`,
+                        a: `Nuestra cámara cuenta con la optimización de color por inteligencia artificial de última generación de Infinix asistida por el procesador <strong>${inf.processor}</strong>. Esto le permite al cliente capturar momentos más nítidos sin saturar ni colapsar el almacenamiento del teléfono en pocas semanas, manteniendo un rendimiento fluido en todo momento.`
+                    },
+                    {
+                        q: `¿Qué argumento de seguridad extrema tiene ${inf.name} frente a ${riv.name}?`,
+                        a: `${activeInfinixId === 'hot-70' ? `El <strong>Infinix HOT 70</strong> es la única referencia en este rango que cuenta con <strong>SGS Grado Militar de 5 Estrellas</strong> para soportar caídas cotidianas extremas sin romperse, protegiendo al 100% la inversión del cliente.` : `El <strong>${inf.name}</strong> está diseñado con chasis robustos con esquinas de de amortiguación que le brindan protección de grado avanzado frente a los plásticos convencionales de los competidores.`}`
+                    }
+                ];
+
+                dataObj.forEach((obj, index) => {
+                    const idx = index + 1;
+                    const card = document.createElement('div');
+                    card.className = "bg-darkCard border border-darkBorder hover:border-infinix/30 p-6 rounded-3xl transition-all duration-300 cursor-pointer group";
+                    card.setAttribute('onclick', `toggleObjection(${idx})`);
+                    card.innerHTML = `
+                        <div class="flex items-start justify-between">
+                            <div class="flex gap-4">
+                                <span class="text-2xl sm:text-3xl">💬</span>
+                                <div>
+                                    <h4 class="font-extrabold text-white group-hover:text-infinix transition-colors text-xs sm:text-sm">"${obj.q}"</h4>
+                                    <p class="text-[10px] text-gray-400 mt-1">Toca para abrir la respuesta persuasiva</p>
+                                </div>
+                            </div>
+                            <span id="icon-obj-${idx}" class="text-infinix font-bold text-xl transition-transform duration-300">+</span>
+                        </div>
+                        <div id="ans-obj-${idx}" class="hidden mt-4 pt-4 border-t border-darkBorder text-xs sm:text-sm text-gray-300 space-y-2 leading-relaxed">
+                            <div class="p-2 bg-infinix/10 border-l-4 border-infinix rounded-r text-[10px] font-mono text-infinix">PITCH MAESTRO DE VENTA:</div>
+                            <p class="text-gray-300 leading-snug">"${obj.a}"</p>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+            }
+        }
+
+        // Navegación de pestañas principales
+        function switchTab(tabId) {
+            const compTab = document.getElementById('tab-comparativa');
+            const argTab = document.getElementById('tab-argumentos');
+            const quizTab = document.getElementById('tab-quiz');
+            if (compTab) compTab.classList.add('hidden');
+            if (argTab) argTab.classList.add('hidden');
+            if (quizTab) quizTab.classList.add('hidden');
+
+            const buttons = ['btn-tab-comparativa', 'btn-tab-argumentos', 'btn-tab-quiz'];
+            buttons.forEach(btnId => {
+                const element = document.getElementById(btnId);
+                if (element) {
+                    element.className = "py-3 px-2 rounded-lg font-bold text-sm transition-all duration-300 flex flex-col md:flex-row items-center justify-center gap-2 text-gray-400 hover:text-white hover:bg-darkBorder/50";
+                }
+            });
+
+            const targetTab = document.getElementById(tabId);
+            if (targetTab) targetTab.classList.remove('hidden');
+
+            const activeButton = document.getElementById('btn-' + tabId);
+            if (activeButton) {
+                activeButton.className = "py-3 px-2 rounded-lg font-bold text-sm transition-all duration-300 flex flex-col md:flex-row items-center justify-center gap-2 bg-infinix text-black shadow-lg shadow-infinix/10";
+            }
+        }
+
+        // Colapsar y expandir objeciones
+        function toggleObjection(num) {
+            const answer = document.getElementById('ans-obj-' + num);
+            const icon = document.getElementById('icon-obj-' + num);
+            if (answer && icon) {
+                if (answer.classList.contains('hidden')) {
+                    answer.classList.remove('hidden');
+                    icon.textContent = "−";
+                    icon.classList.add('rotate-180');
+                } else {
+                    answer.classList.add('hidden');
+                    icon.textContent = "+";
+                    icon.classList.remove('rotate-180');
+                }
+            }
+        }
+
+        // Copiar Pitch de WhatsApp con datos adaptados en tiempo real
+        function copiarPitchWhatsApp() {
+            const inf = infinixDatabase[activeInfinixId];
+            const riv = competitorsDatabase[activeRIVALBrand = activeRivalBrand].models[activeRivalId];
+
+            const pitchText = `🔥 *¡DUELO DE GIGANTES: ¿POR QUÉ GANAR CON EL ${inf.name.toUpperCase()}?* 🔥\n\nFrente al *${riv.name.toUpperCase()}*, tu nuevo Infinix te da más rendimiento real por tu inversión:\n\n🚀 *1. Pantalla ultra veloz:* Infinix ofrece *${inf.hz}Hz* de refresco ultra fluido, superando los *${riv.hz || 120}Hz* del competidor para que navegues con total comodidad visual.\n🔋 *2. Energía al instante:* Batería blindada de *${inf.battery}* con potencia de carga de *${inf.charge}* que recarga en tiempo récord.\n🛡️ *3. Durabilidad blindada:* Chasis de alta resistencia diseñado contra golpes diarios e impactos accidentales.\n💾 *4. Memoria masiva:* Con *${inf.storage}* de espacio de almacenamiento, mantén todas tus fotos y apps favoritas sin límites de memoria.\n\n_¡La mejor tecnología está en tus manos con Infinix!_ 📲`;
+
+            const el = document.createElement('textarea');
+            el.value = pitchText;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+
+            showCustomAlert("¡Pitch Táctico Copiado!", `El argumento de ventas de ${inf.name} frente a ${riv.name} ya está en tu portapapeles listo para enviar por WhatsApp.`);
+        }
+
+        // Modal de alertas
+        function showCustomAlert(title, message) {
+            const alertTitle = document.getElementById('alert-title');
+            const alertMsg = document.getElementById('alert-message');
+            const customAlert = document.getElementById('custom-alert');
+            if (alertTitle && alertMsg && customAlert) {
+                alertTitle.textContent = title;
+                alertMsg.textContent = message;
+                customAlert.classList.remove('hidden');
+            }
+        }
+
+        // Cerrar modal
+        function closeCustomAlert() {
+            const customAlert = document.getElementById('custom-alert');
+            if (customAlert) {
+                customAlert.classList.add('hidden');
+            }
+        }
+
+        // LÓGICA DEL JUEGO / QUIZ DE ENTRENAMIENTO
+        const quizData = [
+            {
+                question: "¿Cuál es la tasa de refresco de la pantalla de nuestro Smart 20 e Infinix HOT 70?",
+                options: [
+                    "A) 60 Hz estándar",
+                    "B) 90 Hz regular",
+                    "C) 120 Hz súper fluida"
+                ],
+                correct: 2,
+                feedback: "¡Excelente! Smart 20 y HOT 70 cuentan con tasas de refresco de 120Hz."
+            },
+            {
+                question: "¿Cuál es la única referencia de Infinix que cuenta con la rigurosa certificación SGS Grado Militar de 5 Estrellas?",
+                options: [
+                    "A) Note Edge",
+                    "B) HOT 70",
+                    "C) Note 60 Pro"
+                ],
+                correct: 1,
+                feedback: "¡Exacto! El HOT 70 es el único blindado oficialmente con SGS Grado Militar 5★."
+            },
+            {
+                question: "Ante la objeción del cliente sobre megapíxeles muy altos de la competencia, ¿cuál es la mejor respuesta?",
+                options: [
+                    "A) Aceptar que el competidor siempre es mejor.",
+                    "B) Argumentar que más megapíxeles de entrada solo llenan la memoria de fotos pesadas, mientras Infinix procesa imágenes de forma óptima con su sensor de 50 MP e Inteligencia Actor.",
+                    "C) Decir que las fotos no son importantes."
+                ],
+                correct: 1,
+                feedback: "¡Brillante! El procesador y la IA de Infinix ofrecen capturas óptimas optimizando el espacio."
+            },
+            {
+                question: "Opcional: ¿Qué potencia de carga ultra veloz ostenta el Infinix Note 60 Pro en el mercado?",
+                options: [
+                    "A) 90W Ultra Carga",
+                    "B) 45W estándar",
+                    "C) 15W convencional"
+                ],
+                correct: 0,
+                feedback: "¡Excelente! El Note 60 Pro carga a una potencia de 90W combinada con su batería de 6000 mAh."
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function loadQuizQuestion() {
+            const currentQuestion = quizData[currentQuestionIndex];
+            const quizProgress = document.getElementById('quiz-progress');
+            const quizScore = document.getElementById('quiz-score');
+            const quizQuestion = document.getElementById('quiz-question');
+            
+            if (quizProgress && quizScore && quizQuestion) {
+                quizProgress.textContent = `Pregunta ${currentQuestionIndex + 1} de ${quizData.length}`;
+                quizScore.textContent = `Puntaje: ${score}`;
+                quizQuestion.textContent = currentQuestion.question;
+
+                const optionsContainer = document.getElementById('quiz-options');
+                if (optionsContainer) {
+                    optionsContainer.innerHTML = '';
+
+                    currentQuestion.options.forEach((opt, idx) => {
+                        const btn = document.createElement('button');
+                        btn.className = "w-full text-left p-4 rounded-xl bg-darkBg border border-darkBorder hover:border-infinix hover:bg-infinix/5 transition-all text-sm font-semibold flex items-center justify-between";
+                        btn.innerHTML = `<span>${opt}</span><span class="text-gray-500 font-mono text-xs">${String.fromCharCode(65 + idx)}</span>`;
+                        btn.onclick = () => checkAnswer(idx, btn);
+                        optionsContainer.appendChild(btn);
+                    });
+                }
+
+                const quizFeedback = document.getElementById('quiz-feedback');
+                const quizNextBtn = document.getElementById('quiz-next-btn');
+                if (quizFeedback) quizFeedback.classList.add('hidden');
+                if (quizNextBtn) quizNextBtn.classList.add('hidden');
+            }
+        }
+
+        function checkAnswer(selectedIndex, selectedBtn) {
+            const currentQuestion = quizData[currentQuestionIndex];
+            const feedbackDiv = document.getElementById('quiz-feedback');
+            
+            const buttons = document.getElementById('quiz-options').getElementsByTagName('button');
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].disabled = true;
+                if (i === currentQuestion.correct) {
+                    buttons[i].classList.add('border-infinix', 'bg-infinix/10', 'text-infinix');
+                }
+            }
+
+            if (selectedIndex === currentQuestion.correct) {
+                score++;
+                if (feedbackDiv) {
+                    feedbackDiv.className = "mt-6 p-4 rounded-xl text-sm font-medium bg-green-500/10 text-green-400 border border-green-500/20";
+                    feedbackDiv.innerHTML = `<strong>¡Correcto!</strong> ${currentQuestion.feedback}`;
+                }
+            } else {
+                if (selectedBtn) {
+                    selectedBtn.classList.add('border-red-500', 'bg-red-500/10', 'text-red-400');
+                }
+                if (feedbackDiv) {
+                    feedbackDiv.className = "mt-6 p-4 rounded-xl text-sm font-medium bg-red-500/10 text-red-400 border border-red-500/20";
+                    feedbackDiv.innerHTML = `<strong>Incorrecto.</strong> La respuesta correcta es la opción "${String.fromCharCode(65 + currentQuestion.correct)}". ${currentQuestion.feedback}`;
+                }
+            }
+
+            const quizScore = document.getElementById('quiz-score');
+            if (quizScore) quizScore.textContent = `Puntaje: ${score}`;
+            if (feedbackDiv) feedbackDiv.classList.remove('hidden');
+            
+            const nextBtn = document.getElementById('quiz-next-btn');
+            if (nextBtn) nextBtn.classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizData.length) {
+                loadQuizQuestion();
+            } else {
+                const quizContainer = document.getElementById('quiz-container');
+                const quizResults = document.getElementById('quiz-results');
+                const finalScoreText = document.getElementById('quiz-final-score-text');
+                
+                if (quizContainer) quizContainer.classList.add('hidden');
+                if (quizResults) quizResults.classList.remove('hidden');
+                if (finalScoreText) {
+                    finalScoreText.textContent = `Has obtenido ${score} de ${quizData.length} respuestas correctas.`;
+                }
+            }
+        }
+
+        // Reiniciar quiz
+        function resetQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            const quizContainer = document.getElementById('quiz-container');
+            const quizResults = document.getElementById('quiz-results');
+            if (quizContainer) quizContainer.classList.remove('hidden');
+            if (quizResults) quizResults.classList.add('hidden');
+            loadQuizQuestion();
+        }
+
+        // Ejecución al iniciar
+        window.onload = function() {
+            populateDropdowns();
+            updateComparison();
+            loadQuizQuestion();
+        };
+    </script>
+</body>
+</html>
